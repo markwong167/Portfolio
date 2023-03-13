@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const FormFieldDiv = styled.div`
-  margin: 0.5rem auto;
+  margin: 0.5rem;
 `;
 
 export const CustomInputDiv = styled.div`

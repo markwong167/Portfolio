@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import { InputAdornment, TextField } from "@mui/material";
+import { Button, InputAdornment, TextField } from "@mui/material";
 import { handleLogin } from "../../redux/Actions/authActions";
 import {
   FieldIcon,
@@ -10,7 +10,7 @@ import {
   LinkSpan,
   SocialLoginButton,
   SocialLoginDiv,
-  SubmitInput,
+  PWManagementTextDiv,
 } from "./login-style";
 import {
   StandardForm,
@@ -35,7 +35,7 @@ const LoginContainer = (props) => {
     }
   };
   return (
-    <StandardForm>
+    <StandardForm onSubmit={loginClicked}>
       {props.authorized ? "Logged in" : ""}
       {props.loginProcessing && !props.authorized ? "Logging.." : ""}
       <Heading1>FRONTEND TEMPLATE</Heading1>
@@ -101,16 +101,17 @@ const LoginContainer = (props) => {
         </CustomInputDiv>
       </FormFieldDiv>
       <FormFieldDiv>
-        <LinkSpan>Forgot Password?</LinkSpan>
+        <Button variant='contained' size='large' onClick={loginClicked}>
+          Submit
+        </Button>
       </FormFieldDiv>
-      <FormFieldDiv>
-        <SubmitInput type='submit' value='SIGN IN' onClick={loginClicked} />
-      </FormFieldDiv>
-      <FormFieldDiv>
+
+      <PWManagementTextDiv>
+        <LinkSpan>Forgot Password</LinkSpan>
         <LinkSpan>
-          <Link to='/Register'>New User? Sign up here</Link>
+          <Link to='/Register'>Sign Up Here</Link>
         </LinkSpan>
-      </FormFieldDiv>
+      </PWManagementTextDiv>
     </StandardForm>
   );
 };

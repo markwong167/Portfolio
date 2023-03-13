@@ -1,8 +1,14 @@
 import { Button, TextField } from "@mui/material";
 import axios from "axios";
 import PropTypes from "prop-types";
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { connect } from "react-redux";
+import {
+  FlexColTopCtrDiv,
+  FlexRowCtrDiv,
+  TitleDiv,
+  FlexRowTopCtrDiv,
+} from "../../styles/app-style";
 import {
   StandardForm,
   CustomInputDiv,
@@ -24,6 +30,7 @@ export const RepoContainer = (props) => {
     }
   };
   const handleChange = (e) => {
+    e.preventDefault();
     setAnimeName(e.target.value);
   };
   const openInNewTab = (url) => {
@@ -31,32 +38,41 @@ export const RepoContainer = (props) => {
     if (newWindow) newWindow.opener = null;
   };
   return (
-    <StandardForm>
-      <FormFieldDiv>
-        <CustomInputDiv>
+    <StandardForm onSubmit={handleSubmit}>
+      <FlexRowCtrDiv>
+        <FormFieldDiv>
           <TextField
+            sx={{ padding: 1 }}
             id='animesearch'
             label='Search for an anime'
             defaultValue=''
             variant='filled'
             onChange={handleChange}
           />
-        </CustomInputDiv>
-      </FormFieldDiv>
-      <FormFieldDiv>
-        <Button variant='contained' size='large' onClick={handleSubmit}>
-          Submit
-        </Button>
-      </FormFieldDiv>
-      {animus.length !== 0 &&
-        animus.slice(0, 3).map((pic) => {
-          return (
-            <picture key={pic.mal_id} onClick={() => openInNewTab(pic.url)}>
-              <source srcSet={pic.images.webp.image_url} type='image/webp' />
-              <img src={pic.images.jpg.image_url} type='image' />
-            </picture>
-          );
-        })}
+        </FormFieldDiv>
+        <FormFieldDiv>
+          <Button variant='contained' size='large' onClick={handleSubmit}>
+            Submit
+          </Button>
+        </FormFieldDiv>
+      </FlexRowCtrDiv>
+      <FlexRowTopCtrDiv>
+        {animus.length !== 0 &&
+          animus.slice(0, 3).map((pic) => {
+            return (
+              <FlexColTopCtrDiv style={{ margin: "1rem" }} key={pic.mal_id}>
+                <TitleDiv>{pic.title}</TitleDiv>
+                <picture onClick={() => openInNewTab(pic.url)}>
+                  <source
+                    srcSet={pic.images.webp.image_url}
+                    type='image/webp'
+                  />
+                  <img src={pic.images.jpg.image_url} type='image' />
+                </picture>
+              </FlexColTopCtrDiv>
+            );
+          })}
+      </FlexRowTopCtrDiv>
     </StandardForm>
   );
 };

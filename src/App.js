@@ -19,7 +19,7 @@ import { faKey, faEnvelope } from "@fortawesome/free-solid-svg-icons";
 import { library } from "@fortawesome/fontawesome-svg-core";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { theme } from "./theme";
-import { AppDiv } from "./app-style";
+import { AppDiv } from "./styles/app-style";
 import RepoContainer from "./pages/Repo/RepoContainer";
 import HomeContainer from "./pages/Home/HomeContainer";
 

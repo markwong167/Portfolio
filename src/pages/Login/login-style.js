@@ -37,11 +37,9 @@ export const LinkSpan = styled.div`
   text-decoration: underline;
   font-size: 90%;
   cursor: pointer;
+  margin: 0.5em;
 `;
-export const SubmitInput = styled.input`
-  font-size: 100%;
-  width: 150px;
-  padding: 10px;
-  cursor: pointer;
-  border-radius: 10px;
+export const PWManagementTextDiv = styled.div`
+  display: flex;
+  justify-content: center;
 `;
