@@ -1,15 +1,7 @@
-# frontend-template
+# frontend-template-ts
 
-Hi, this is the frontend template that fits my style the best. Feel free to use
+This is a clone of https://github.com/VLegatus/frontend-template
 
-This also serves as a more difficult way to search anime instead of going to MyAnimeList directly.
+But it also uses Typescript, and Redux Toolkit
 
-- The free API I'm using is from https://jikan.moe/ which uses the MyAnimeList API.
-
-- Used this as a resource for the login page: https://codesandbox.io/s/l4qk0rxop7
-
-Uses: React, Redux, MUI, Styled Components, Webpack, and FontAwesome.
-
-
-
-Also, don't mind the issues. I was having a little fun
+Uses:Typescript, React, Redux (Modern), MUI, Styled Components, Webpack, and FontAwesome.

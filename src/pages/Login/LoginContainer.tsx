@@ -1,9 +1,7 @@
 import React, { useState } from "react";
-import { connect } from "react-redux";
 import { Link } from "react-router-dom";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { Button, InputAdornment, TextField } from "@mui/material";
-import { handleLogin } from "../../redux/Actions/authActions";
 import {
   FieldIcon,
   Heading1,
@@ -12,22 +10,21 @@ import {
   SocialLoginDiv,
   PWManagementTextDiv,
 } from "./login-style";
-import {
-  StandardForm,
-  CustomInputDiv,
-  FormFieldDiv,
-} from "../../styles/form-style";
+import { StandardForm, FormFieldDiv } from "../../styles/form-style";
 
-const LoginContainer = (props) => {
+import { useAppDispatch } from "../../redux/hooks";
+import { loginAdded } from "../../redux/Slices/authSlice";
+
+const LoginContainer = () => {
+  const dispatch: import("src/redux/store").AppDispatch = useAppDispatch();
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const loginClicked = (e) => {
-    e.preventDefault();
-    props.handleLogin({ email: email, password: password });
+  const loginClicked = () => {
+    dispatch(loginAdded({ email: email, password: password }));
     setEmail("");
     setPassword("");
   };
-  const handleChange = (value, type) => {
+  const handleChange = (value: string, type: string) => {
     if (type === "email") {
       setEmail(value);
     } else {
@@ -36,8 +33,6 @@ const LoginContainer = (props) => {
   };
   return (
     <StandardForm onSubmit={loginClicked}>
-      {props.authorized ? "Logged in" : ""}
-      {props.loginProcessing && !props.authorized ? "Logging.." : ""}
       <Heading1>FRONTEND TEMPLATE</Heading1>
 
       <span>Log in with a platform</span>
@@ -65,40 +60,37 @@ const LoginContainer = (props) => {
       </SocialLoginDiv>
       <span>Log in with email or password</span>
       <FormFieldDiv>
-        <CustomInputDiv>
-          <TextField
-            id='loginEmail'
-            label='Email'
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position='start'>
-                  <FieldIcon icon='envelope' />
-                </InputAdornment>
-              ),
-            }}
-            value={email}
-            onChange={(e) => handleChange(e.target.value, "email")}
-            variant='filled'
-          />
-        </CustomInputDiv>
+        <TextField
+          id='loginEmail'
+          label='Email'
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position='start'>
+                <FieldIcon icon='envelope' />
+              </InputAdornment>
+            ),
+          }}
+          value={email}
+          onChange={(e) => handleChange(e.target.value, "email")}
+          variant='filled'
+        />
       </FormFieldDiv>
       <FormFieldDiv>
-        <CustomInputDiv>
-          <TextField
-            id='loginPW'
-            label='Password'
-            InputProps={{
-              startAdornment: (
-                <InputAdornment position='start'>
-                  <FieldIcon icon='key' />
-                </InputAdornment>
-              ),
-            }}
-            value={password}
-            onChange={(e) => handleChange(e.target.value, "password")}
-            variant='filled'
-          />
-        </CustomInputDiv>
+        <TextField
+          id='loginPW'
+          label='Password'
+          InputProps={{
+            startAdornment: (
+              <InputAdornment position='start'>
+                <FieldIcon icon='key' />
+              </InputAdornment>
+            ),
+          }}
+          type='password'
+          value={password}
+          onChange={(e) => handleChange(e.target.value, "password")}
+          variant='filled'
+        />
       </FormFieldDiv>
       <FormFieldDiv>
         <Button variant='contained' size='large' onClick={loginClicked}>
@@ -116,7 +108,4 @@ const LoginContainer = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  authorized: state.authReducer.authorized,
-});
-export default connect(mapStateToProps, { handleLogin })(LoginContainer);
+export default LoginContainer;

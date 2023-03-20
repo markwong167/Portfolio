@@ -1,7 +1,10 @@
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
   entry: {
-    main: "./src/index.js",
+    main: "./src/index.tsx",
+  },
+  resolve: {
+    extensions: [".ts", ".tsx", ".js", "json"],
   },
   module: {
     rules: [
@@ -31,6 +34,7 @@ module.exports = {
         test: /\.(css)$/,
         use: ["style-loader", "css-loader"],
       },
+      { test: /\.tsx?$/, exclude: /node_modules/, loader: "ts-loader" },
       { test: /\.(js)$/, exclude: /node_modules/, use: "babel-loader" },
     ],
   },

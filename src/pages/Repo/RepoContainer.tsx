@@ -1,26 +1,22 @@
 import { Button, TextField } from "@mui/material";
 import axios from "axios";
-import PropTypes from "prop-types";
-import React, { Fragment, useState } from "react";
-import { connect } from "react-redux";
+import React, { useState } from "react";
 import {
   FlexColTopCtrDiv,
   FlexRowCtrDiv,
   TitleDiv,
   FlexRowTopCtrDiv,
 } from "../../styles/app-style";
-import {
-  StandardForm,
-  CustomInputDiv,
-  FormFieldDiv,
-} from "../../styles/form-style";
+import { StandardForm, FormFieldDiv } from "../../styles/form-style";
 
-export const RepoContainer = (props) => {
+export const RepoContainer = () => {
   const [animus, setAnimus] = useState([]);
   const [animeName, setAnimeName] = useState("");
   const baseURL = `https://api.jikan.moe/v4/anime?q=${animeName}&sfw`;
 
-  const handleSubmit = (e) => {
+  const handleSubmit = (
+    e: React.MouseEvent<HTMLButtonElement> | React.SyntheticEvent
+  ) => {
     e.preventDefault();
     if (animeName.length > 3) {
       axios.get(baseURL).then((response) => {
@@ -29,11 +25,10 @@ export const RepoContainer = (props) => {
       });
     }
   };
-  const handleChange = (e) => {
-    e.preventDefault();
+  const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     setAnimeName(e.target.value);
   };
-  const openInNewTab = (url) => {
+  const openInNewTab = (url: string) => {
     const newWindow = window.open(url, "_blank", "noopener,noreferrer");
     if (newWindow) newWindow.opener = null;
   };
@@ -58,7 +53,8 @@ export const RepoContainer = (props) => {
       </FlexRowCtrDiv>
       <FlexRowTopCtrDiv>
         {animus.length !== 0 &&
-          animus.slice(0, 3).map((pic) => {
+          animus.slice(0, 3).map((pic: any) => {
+            console.log(pic);
             return (
               <FlexColTopCtrDiv style={{ margin: "1rem" }} key={pic.mal_id}>
                 <TitleDiv>{pic.title}</TitleDiv>
@@ -67,7 +63,7 @@ export const RepoContainer = (props) => {
                     srcSet={pic.images.webp.image_url}
                     type='image/webp'
                   />
-                  <img src={pic.images.jpg.image_url} type='image' />
+                  <img src={pic.images.jpg.image_url} />
                 </picture>
               </FlexColTopCtrDiv>
             );
@@ -77,10 +73,4 @@ export const RepoContainer = (props) => {
   );
 };
 
-RepoContainer.propTypes = {};
-
-const mapStateToProps = (state) => ({});
-
-const mapDispatchToProps = {};
-
-export default connect(mapStateToProps, mapDispatchToProps)(RepoContainer);
+export default RepoContainer;

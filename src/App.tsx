@@ -1,14 +1,13 @@
-import React, { Fragment } from "react";
+import React from "react";
 import {
   BrowserRouter as Router,
   Redirect,
   Route,
   Switch,
 } from "react-router-dom";
-import { connect } from "react-redux";
 
+import { useAppSelector } from "./redux/hooks";
 import GlobalFonts from "./assets/fonts/fonts";
-import RegisterContainer from "./pages/Register/RegisterContainer";
 import LoginContainer from "./pages/Login/LoginContainer";
 import {
   faTwitter,
@@ -21,23 +20,24 @@ import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { theme } from "./theme";
 import { AppDiv } from "./styles/app-style";
 import RepoContainer from "./pages/Repo/RepoContainer";
-import HomeContainer from "./pages/Home/HomeContainer";
 
 library.add(faYoutube, faTwitter, faDiscord, faKey, faEnvelope);
-const App = (props) => {
+
+const App = () => {
+  const authorized = useAppSelector((state) => {
+    return state.auth.authorized;
+  });
   return (
     <AppDiv>
       <GlobalFonts />
       <StyledThemeProvider theme={theme}>
         <Router>
-          {props.authorized ? (
+          {authorized === true ? (
             <Switch>
               <Route path={"/"} component={RepoContainer} />
-              {/* <Route path='/' component={HomeContainer} /> */}
             </Switch>
           ) : (
             <Switch>
-              <Route path='/Register' component={RegisterContainer} />
               <Route path='/Login' component={LoginContainer} />
               <Route path='*'>
                 <Redirect to='/Login' />
@@ -50,7 +50,4 @@ const App = (props) => {
   );
 };
 
-const mapStateToProps = (state) => ({
-  authorized: state.authReducer.authorized,
-});
-export default connect(mapStateToProps)(App);
+export default App;
