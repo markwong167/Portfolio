@@ -1,7 +1,5 @@
-# frontend-template-ts
+# portfolio
 
-This is a clone of https://github.com/VLegatus/frontend-template
-
-But it also uses Typescript, and Redux Toolkit
+This is my portfolio website
 
 Uses:Typescript, React, Redux (Modern), MUI, Styled Components, Webpack, and FontAwesome.

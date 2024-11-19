@@ -1,5 +1,5 @@
 {
-  "name": "frontend-template-ts",
+  "name": "portfolio",
   "description": "",
   "main": "./src/index.tsx",
   "babel": {
