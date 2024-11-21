@@ -4,7 +4,7 @@ module.exports = {
     main: "./src/index.tsx",
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", "json"],
+    extensions: [".ts", ".tsx", ".js", ".json", ".d.ts"],
   },
   module: {
     rules: [
@@ -28,6 +28,13 @@ module.exports = {
             name: "[name].[hash].[ext]",
             outputPath: "images",
           },
+        },
+      },
+      {
+        test: /\.pdf$/,
+        type: "asset/resource",
+        generator: {
+          filename: "pdfs/[name].[hash][ext]",
         },
       },
       {

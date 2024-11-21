@@ -1,51 +1,39 @@
-import React from "react";
-import {
-  BrowserRouter as Router,
-  Redirect,
-  Route,
-  Switch,
-} from "react-router-dom";
-
-import { useAppSelector } from "./redux/hooks";
+import React, { useState } from "react";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import GlobalFonts from "./assets/fonts/fonts";
-import LoginContainer from "./pages/Login/LoginContainer";
-import {
-  faTwitter,
-  faYoutube,
-  faDiscord,
-} from "@fortawesome/free-brands-svg-icons";
-import { faKey, faEnvelope } from "@fortawesome/free-solid-svg-icons";
-import { library } from "@fortawesome/fontawesome-svg-core";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { theme } from "./theme";
-import { AppDiv } from "./styles/app-style";
-import RepoContainer from "./pages/Repo/RepoContainer";
-
-library.add(faYoutube, faTwitter, faDiscord, faKey, faEnvelope);
+import { AppDiv, MainDiv, MainWrapperDiv } from "./styles/app-style";
+import PortfolioPage from "./pages/Portfolio/PortfolioPage";
+import ResumePage from "./pages/ResumePage";
+import Header from "./layout/Header";
+import SideBar from "./layout/SideBar";
+import { IconContext } from "react-icons";
 
 const App = () => {
-  const authorized = useAppSelector((state) => {
-    return state.auth.authorized;
-  });
+  const [sidebarOpen, setSidebarOpen] = useState(true);
   return (
     <AppDiv>
       <GlobalFonts />
-      <StyledThemeProvider theme={theme}>
-        <Router>
-          {authorized === true ? (
-            <Switch>
-              <Route path={"/"} component={RepoContainer} />
-            </Switch>
-          ) : (
-            <Switch>
-              <Route path='/Login' component={LoginContainer} />
-              <Route path='*'>
-                <Redirect to='/Login' />
-              </Route>
-            </Switch>
-          )}
-        </Router>
-      </StyledThemeProvider>
+      <IconContext.Provider value={{ style: { verticalAlign: "-10%" } }}>
+        <StyledThemeProvider theme={theme}>
+          <Router>
+            <Header
+              onToggleSidebar={() => setSidebarOpen(!sidebarOpen)}
+              sidebarOpen={sidebarOpen}
+            />
+            <MainWrapperDiv>
+              <SideBar sidebarOpen={sidebarOpen} />
+              <MainDiv>
+                <Switch>
+                  <Route path={"/Resume"} component={ResumePage} />
+                  <Route path={"/"} component={PortfolioPage} />
+                </Switch>
+              </MainDiv>
+            </MainWrapperDiv>
+          </Router>
+        </StyledThemeProvider>
+      </IconContext.Provider>
     </AppDiv>
   );
 };

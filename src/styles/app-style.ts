@@ -1,10 +1,24 @@
 import styled from "styled-components";
+type MainDivProps = { sidebarOpen: boolean };
 export const AppDiv = styled.div`
   display: flex;
   flex-direction: column;
-  align-items: center;
   font-family: "Roboto";
   min-height: 100vh;
+  width: 100%;
+  color-scheme: light dark;
+`;
+export const MainWrapperDiv = styled.div`
+  display: flex;
+  flex: 1;
+  overflow: hidden;
+  color: light-dark(#333b3c, #dfdfdc);
+  background-color: light-dark(#efedea, #1a1a1a);
+`;
+export const MainDiv = styled.div`
+  flex: 1;
+  padding: 1rem;
+  overflow-y: auto;
 `;
 export const TitleDiv = styled.div`
   display: flex;
