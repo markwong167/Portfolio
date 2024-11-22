@@ -11,13 +11,18 @@ export const MainWrapperDiv = styled.div`
   display: flex;
   flex: 1;
   overflow: hidden;
-  color: light-dark(#333b3c, #dfdfdc);
-  background-color: light-dark(#efedea, #1a1a1a);
+
+  background-color: ${({ theme }) => theme.bodyBg};
+  color: ${({ theme }) => theme.bodyText};
+  /* color: light-dark(#333b3c, #dfdfdc);
+  background-color: light-dark(#efedea, #1a1a1a); */
 `;
 export const MainDiv = styled.div`
   flex: 1;
   padding: 1rem;
   overflow-y: auto;
+  display: flex;
+  justify-content: center;
 `;
 export const TitleDiv = styled.div`
   display: flex;

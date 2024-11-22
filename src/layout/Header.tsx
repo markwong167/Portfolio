@@ -1,6 +1,6 @@
 import React from "react";
 import {
-  HeaderButton,
+  ThemeToggleButton,
   HeaderContainer,
   HeaderSubSection,
   UnstyledAnchor,
@@ -8,7 +8,7 @@ import {
 } from "./layout-style";
 import { FaExternalLinkAlt } from "react-icons/fa";
 
-const Header = ({ onToggleSidebar, sidebarOpen }) => {
+const Header = ({ toggleTheme }) => {
   return (
     <HeaderContainer>
       <HeaderSubSection>
@@ -42,6 +42,7 @@ const Header = ({ onToggleSidebar, sidebarOpen }) => {
             Portfolio Code <FaExternalLinkAlt />
           </h2>
         </UnstyledAnchor>
+        <ThemeToggleButton onClick={toggleTheme}>🌓</ThemeToggleButton>
       </HeaderSubSection>
     </HeaderContainer>
   );

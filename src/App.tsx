@@ -24,10 +24,7 @@ const App = () => {
       <IconContext.Provider value={{ style: { verticalAlign: "-10%" } }}>
         <StyledThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
           <Router>
-            <Header
-              onToggleSidebar={() => setSidebarOpen(!sidebarOpen)}
-              sidebarOpen={sidebarOpen}
-            />
+            <Header toggleTheme={toggleTheme} />
             <MainWrapperDiv>
               <SideBar
                 sidebarOpen={sidebarOpen}

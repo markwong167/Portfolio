@@ -1,17 +1,21 @@
 export const lightTheme = {
-  headerBg: "#ffffff",
-  headerText: "#333333",
-  sidebarBg: "#f4f4f4",
-  accentColor: "#007bff",
-  accentHoverColor: "#0056b3",
-  accentFocusColor: "#66b2ff",
+  headerBg: "#cfcdca",
+  headerText: "#333b3c",
+  sidebarText: "#333b3c",
+  sidebarBg: "#cfcdca",
+  bodyText: "#333b3c",
+  bodyBg: "#efedea",
+  accentBgColor: "rgba(0,0,0,0.2)",
+  accentHoverColor: "rgba(0,0,0,0.2)",
 };
 
 export const darkTheme = {
-  headerBg: "#222222",
-  headerText: "#f4f4f4",
-  sidebarBg: "#333333",
-  accentColor: "#66b2ff",
-  accentHoverColor: "#3399ff",
-  accentFocusColor: "#99ccff",
+  headerText: "#dfdfdc",
+  headerBg: "#2a2a2a",
+  sidebarText: "#dfdfdc",
+  sidebarBg: "#2a2a2a",
+  bodyText: "#dfdfdc",
+  bodyBg: "#1a1a1a",
+  accentBgColor: "rgba(255,255,255,0.2)",
+  accentHoverColor: "rgba(255,255,255,0.2)",
 };

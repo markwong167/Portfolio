@@ -6,8 +6,10 @@ export const HeaderContainer = styled.div`
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem 0;
-  color: light-dark(#333b3c, #dfdfdc);
-  background-color: light-dark(#cfcdca, #2a2a2a);
+  color: ${({ theme }) => theme.headerText};
+  background-color: ${({ theme }) => theme.headerBg};
+  /* color: light-dark(#333b3c, #dfdfdc);
+  background-color: light-dark(#cfcdca, #2a2a2a); */
 `;
 
 export const HeaderSubSection = styled.div`
@@ -39,16 +41,17 @@ export const SideBarAside = styled.aside<SideBarAsideProps>`
     sidebarOpen ? " translateX(0)" : "translateX(-100%)"};
   flex-direction: column;
   overflow-y: auto;
-  background-color: ${({ theme }) => theme.headerBg};
+  color: ${({ theme }) => theme.sidebarText};
+  background-color: ${({ theme }) => theme.sidebarBg};
   /* color: light-dark(#333b3c, #dfdfdc);
   background-color: light-dark(#cfcdca, #2a2a2a); */
   transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1) ease;
 `;
-export const HeaderButton = styled.button`
+export const ThemeToggleButton = styled.button`
   background: none;
   border: none;
   color: inherit;
-  font-size: 2rem;
+  font-size: 1.5rem;
   cursor: pointer;
   vertical-align: middle;
   &:hover {
@@ -59,16 +62,13 @@ export const HeaderButton = styled.button`
 
 export const SidebarKnob = styled.button<SideBarAsideProps>`
   position: fixed;
-  top: 50%;
-  left: ${({ sidebarOpen }) =>
-    sidebarOpen ? "250px" : "10px"}; /* Adjust based on sidebar width */
-  transform: translateY(-50%);
-  width: 50px;
-  height: 50px;
+  left: ${({ sidebarOpen }) => (sidebarOpen ? "250px" : "10px")};
+  transform: translateX(${({ sidebarOpen }) => (sidebarOpen ? "-3rem" : "0")});
   border: none;
-  border-radius: 50%;
-  background-color: ${({ theme }) => theme.accentColor};
+  border-radius: 10px;
+  background-color: ${({ theme }) => theme.accentBgColor};
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  padding: 0 0.25rem;
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -77,20 +77,9 @@ export const SidebarKnob = styled.button<SideBarAsideProps>`
   &:hover {
     background-color: ${({ theme }) => theme.accentHoverColor};
   }
-
-  &:focus {
-    outline: 2px solid ${({ theme }) => theme.accentFocusColor};
-  }
 `;
 
 export const SidebarKnobTriangle = styled.div<SideBarAsideProps>`
-  width: 0;
-  height: 0;
-  margin-left: ${({ sidebarOpen }) => (sidebarOpen ? "0.25rem" : "-0.25rem")};
-  border-left: 11px solid transparent;
-  border-right: 11px solid transparent;
-  border-bottom: 17px solid ${({ theme }) => theme.headerText};
-  transform: ${({ sidebarOpen }) =>
-    sidebarOpen ? "rotate(90deg)" : "rotate(-90deg)"};
-  transition: transform 0.15s ease;
+  font-size: 2rem;
+  color: rgba(0, 0, 0, 0.5);
 `;

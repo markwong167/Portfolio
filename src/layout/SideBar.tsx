@@ -1,5 +1,6 @@
 import React from "react";
 import { SideBarAside, SidebarKnob, SidebarKnobTriangle } from "./layout-style";
+import { FaChevronLeft, FaChevronRight } from "react-icons/fa";
 
 const SideBar = ({ sidebarOpen, setSidebarOpen }) => {
   return (
@@ -9,7 +10,9 @@ const SideBar = ({ sidebarOpen, setSidebarOpen }) => {
         sidebarOpen={sidebarOpen}
         onClick={() => setSidebarOpen(!sidebarOpen)}
       >
-        <SidebarKnobTriangle sidebarOpen={sidebarOpen} />
+        <SidebarKnobTriangle sidebarOpen={sidebarOpen}>
+          {sidebarOpen ? <FaChevronLeft /> : <FaChevronRight />}
+        </SidebarKnobTriangle>
       </SidebarKnob>
     </>
   );
