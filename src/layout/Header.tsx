@@ -3,41 +3,45 @@ import {
   HeaderButton,
   HeaderContainer,
   HeaderSubSection,
+  UnstyledAnchor,
+  UnstyledLink,
 } from "./layout-style";
-import {
-  FaChevronLeft,
-  FaChevronRight,
-  FaExternalLinkAlt,
-} from "react-icons/fa";
-import { Link } from "react-router-dom";
+import { FaExternalLinkAlt } from "react-icons/fa";
 
 const Header = ({ onToggleSidebar, sidebarOpen }) => {
   return (
     <HeaderContainer>
       <HeaderSubSection>
-        <HeaderButton onClick={onToggleSidebar}>
-          {sidebarOpen ? <FaChevronLeft /> : <FaChevronRight />}
-        </HeaderButton>
-        <h1>Mark Wong</h1>
+        <UnstyledLink to='/'>
+          <h1>Mark Wong</h1>
+        </UnstyledLink>
       </HeaderSubSection>
       <HeaderSubSection>
-        <Link to='/Resume'>
+        <UnstyledLink to='/Resume'>
           <h2>Resume</h2>
-        </Link>
-        <a href='https://www.linkedin.com/in/markwong167/'>
+        </UnstyledLink>
+        <UnstyledAnchor href='https://www.linkedin.com/in/markwong167/'>
           <h2>Contact</h2>
-        </a>
-        <a href='https://www.linkedin.com/in/markwong167/'>
+        </UnstyledAnchor>
+        <UnstyledAnchor
+          href='https://www.linkedin.com/in/markwong167/'
+          target='blank'
+          rel='noreferrer noopener'
+        >
           <h2>
             LinkedIn <FaExternalLinkAlt />
           </h2>
-        </a>
+        </UnstyledAnchor>
 
-        <a href='https://github.com/VLegatus/Portfolio'>
+        <UnstyledAnchor
+          href='https://github.com/VLegatus/Portfolio'
+          target='blank'
+          rel='noreferrer noopener'
+        >
           <h2>
             Portfolio Code <FaExternalLinkAlt />
           </h2>
-        </a>
+        </UnstyledAnchor>
       </HeaderSubSection>
     </HeaderContainer>
   );

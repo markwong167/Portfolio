@@ -1,5 +1,4 @@
 import styled from "styled-components";
-type MainDivProps = { sidebarOpen: boolean };
 export const AppDiv = styled.div`
   display: flex;
   flex-direction: column;

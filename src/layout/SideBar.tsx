@@ -1,8 +1,18 @@
 import React from "react";
-import { SideBarAside } from "./layout-style";
+import { SideBarAside, SidebarKnob, SidebarKnobTriangle } from "./layout-style";
 
-const SideBar = ({ sidebarOpen }) => {
-  return <SideBarAside sidebarOpen={sidebarOpen}>Sidebar</SideBarAside>;
+const SideBar = ({ sidebarOpen, setSidebarOpen }) => {
+  return (
+    <>
+      <SideBarAside sidebarOpen={sidebarOpen}>Sidebar</SideBarAside>{" "}
+      <SidebarKnob
+        sidebarOpen={sidebarOpen}
+        onClick={() => setSidebarOpen(!sidebarOpen)}
+      >
+        <SidebarKnobTriangle sidebarOpen={sidebarOpen} />
+      </SidebarKnob>
+    </>
+  );
 };
 
 export default SideBar;
