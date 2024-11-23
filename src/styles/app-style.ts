@@ -9,6 +9,7 @@ export const AppDiv = styled.div`
 `;
 export const MainWrapperDiv = styled.div`
   display: flex;
+  flex-direction: row;
   flex: 1;
   overflow: hidden;
 

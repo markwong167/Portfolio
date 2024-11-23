@@ -1,15 +1,16 @@
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 export const HeaderContainer = styled.div`
-  height: 60px;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  height: var(--header-height);
   display: flex;
   align-items: center;
   justify-content: space-between;
   padding: 0.75rem 0;
   color: ${({ theme }) => theme.headerText};
   background-color: ${({ theme }) => theme.headerBg};
-  /* color: light-dark(#333b3c, #dfdfdc);
-  background-color: light-dark(#cfcdca, #2a2a2a); */
 `;
 
 export const HeaderSubSection = styled.div`

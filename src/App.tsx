@@ -7,8 +7,10 @@ import { AppDiv, MainDiv, MainWrapperDiv } from "./styles/app-style";
 import PortfolioPage from "./pages/PortfolioPage";
 import ResumePage from "./pages/ResumePage";
 import Header from "./layout/Header";
-import SideBar from "./layout/SideBar";
 import { IconContext } from "react-icons";
+import { SidebarProvider } from "./components/ui/sidebar";
+import SideBarContainer from "./layout/SideBarContainer";
+import "./globals.css";
 
 const App = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
@@ -23,21 +25,25 @@ const App = () => {
       <GlobalFonts />
       <IconContext.Provider value={{ style: { verticalAlign: "-10%" } }}>
         <StyledThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
-          <Router>
-            <Header toggleTheme={toggleTheme} />
-            <MainWrapperDiv>
-              <SideBar
-                sidebarOpen={sidebarOpen}
-                setSidebarOpen={setSidebarOpen}
-              />
-              <MainDiv>
-                <Switch>
-                  <Route path={"/Resume"} component={ResumePage} />
-                  <Route path={"/"} component={PortfolioPage} />
-                </Switch>
-              </MainDiv>
-            </MainWrapperDiv>
-          </Router>
+          <SidebarProvider open={sidebarOpen} onOpenChange={setSidebarOpen}>
+            <Router>
+              <div className='w-full flex flex-col'>
+                <Header toggleTheme={toggleTheme} />
+                <MainWrapperDiv>
+                  <SideBarContainer
+                    sidebarOpen={sidebarOpen}
+                    setSidebarOpen={setSidebarOpen}
+                  />
+                  <MainDiv>
+                    <Switch>
+                      <Route path={"/Resume"} component={ResumePage} />
+                      <Route path={"/"} component={PortfolioPage} />
+                    </Switch>
+                  </MainDiv>
+                </MainWrapperDiv>
+              </div>
+            </Router>
+          </SidebarProvider>
         </StyledThemeProvider>
       </IconContext.Provider>
     </AppDiv>

@@ -39,7 +39,7 @@ module.exports = {
       },
       {
         test: /\.(css)$/,
-        use: ["style-loader", "css-loader"],
+        use: ["style-loader", "css-loader", "postcss-loader"],
       },
       { test: /\.tsx?$/, exclude: /node_modules/, loader: "ts-loader" },
       { test: /\.(js)$/, exclude: /node_modules/, use: "babel-loader" },

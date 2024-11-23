@@ -10,7 +10,10 @@
     "allowJs": true,
     "esModuleInterop": true,
     "moduleResolution": "node",
-    "baseUrl": "./"
+    "baseUrl": "./",
+    "paths": {
+      "@/*": ["./*"]
+    }
   },
   "include": ["./src/"],
   "exclude": ["node_modules"]
