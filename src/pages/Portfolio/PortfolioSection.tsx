@@ -1,29 +1,12 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../../components/ui/card";
-
 import React from "react";
+import { PorfolioSectionInfoCard } from "./PorfolioSectionInfoCard";
+import { PorfolioSectionPictureCard } from "./PorfolioSectionPictureCard";
 
-export const PortfolioSection = () => {
+export const PortfolioSection = ({ data }: { data: SectionDataType }) => {
   return (
-    <div className='flex flex-col gap-4'>
-      <Card>
-        <CardHeader>
-          <CardTitle>Card Title</CardTitle>
-          <CardDescription>Card Description</CardDescription>
-        </CardHeader>
-        <CardContent>
-          <p>Card Content</p>
-        </CardContent>
-        <CardFooter>
-          <p>Card Footer</p>
-        </CardFooter>
-      </Card>
+    <div className='flex gap-4 flex-1'>
+      <PorfolioSectionInfoCard data={data} />
+      <PorfolioSectionPictureCard data={data} />
     </div>
   );
 };
