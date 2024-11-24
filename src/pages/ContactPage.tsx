@@ -1,5 +1,5 @@
 import React from "react";
-const ContactPage = () => {
+export const ContactPage = () => {
   return (
     <div
       style={{
@@ -15,5 +15,3 @@ const ContactPage = () => {
     </div>
   );
 };
-
-export default ContactPage;

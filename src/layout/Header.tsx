@@ -9,7 +9,7 @@ import {
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
-const Header = ({ toggleTheme }) => {
+export const Header = ({ toggleTheme }) => {
   return (
     <HeaderContainer>
       <HeaderSubSection>
@@ -48,5 +48,3 @@ const Header = ({ toggleTheme }) => {
     </HeaderContainer>
   );
 };
-
-export default Header;

@@ -4,14 +4,14 @@ import GlobalFonts from "./assets/fonts/fonts";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./theme";
 import { AppDiv, MainDiv, MainWrapperDiv } from "./styles/app-style";
-import PortfolioPage from "./pages/PortfolioPage";
-import ResumePage from "./pages/ResumePage";
-import Header from "./layout/Header";
+import { PortfolioPage } from "./pages/Portfolio/PortfolioPage";
+import { ResumePage } from "./pages/ResumePage";
+import { Header } from "./layout/Header";
 import { IconContext } from "react-icons";
 import { SidebarProvider, SidebarTrigger } from "./components/ui/sidebar";
-import SideBarContainer from "./layout/SideBarContainer";
+import { SideBarContainer } from "./layout/SideBarContainer";
 import "./globals.css";
-import ContactPage from "./pages/ContactPage";
+import { ContactPage } from "./pages/ContactPage";
 
 const App = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);

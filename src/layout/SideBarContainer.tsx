@@ -39,7 +39,7 @@ const items = [
     icon: Settings,
   },
 ];
-const SideBarContainer = ({
+export const SideBarContainer = ({
   sidebarOpen,
   setSidebarOpen,
 }: {
@@ -70,5 +70,3 @@ const SideBarContainer = ({
     </Sidebar>
   );
 };
-
-export default SideBarContainer;

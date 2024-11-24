@@ -1,7 +1,7 @@
 import React from "react";
 import samplePdf from "../assets/Mark_Wong_Resume.pdf";
 
-const ResumePage = () => {
+export const ResumePage = () => {
   return (
     <div className='relative w-9/12 h-[calc(100vh-var(--header-height)-2rem)] mx-auto border border-gray-300 rounded-lg overflow-hidden'>
       <iframe
@@ -12,5 +12,3 @@ const ResumePage = () => {
     </div>
   );
 };
-
-export default ResumePage;
