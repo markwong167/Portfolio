@@ -7,6 +7,7 @@ import {
   UnstyledLink,
 } from "./layout-style";
 import { FaExternalLinkAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const Header = ({ toggleTheme }) => {
   return (
@@ -17,12 +18,12 @@ const Header = ({ toggleTheme }) => {
         </UnstyledLink>
       </HeaderSubSection>
       <HeaderSubSection>
-        <UnstyledLink to='/Resume'>
+        <Link className='hover:underline' to='/Resume'>
           <h2>Resume</h2>
-        </UnstyledLink>
-        <UnstyledAnchor href='https://www.linkedin.com/in/markwong167/'>
+        </Link>
+        <Link className='hover:underline' to='/Contact'>
           <h2>Contact</h2>
-        </UnstyledAnchor>
+        </Link>
         <UnstyledAnchor
           href='https://www.linkedin.com/in/markwong167/'
           target='blank'

@@ -1,6 +1,6 @@
 import React from "react";
-export const RepoContainer = () => {
+export const PortfolioPage = () => {
   return <div>Portfolio</div>;
 };
 
-export default RepoContainer;
+export default PortfolioPage;
