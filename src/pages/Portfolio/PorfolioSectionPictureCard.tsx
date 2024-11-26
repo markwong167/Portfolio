@@ -1,11 +1,4 @@
-import {
-  Card,
-  CardContent,
-  CardDescription,
-  CardFooter,
-  CardHeader,
-  CardTitle,
-} from "../../components/ui/card";
+import { Card, CardContent } from "../../components/ui/card";
 import React from "react";
 export const PorfolioSectionPictureCard = ({
   data,
@@ -13,9 +6,13 @@ export const PorfolioSectionPictureCard = ({
   data: SectionDataType;
 }) => {
   return (
-    <Card className='flex-1'>
-      <CardContent>
-        <p>Card Content</p>
+    <Card className='flex-1 overflow-hidden'>
+      <CardContent className='p-0'>
+        <img
+          src={data?.image}
+          alt={data.image}
+          className='w-full h-full object-cover'
+        />
       </CardContent>
     </Card>
   );
