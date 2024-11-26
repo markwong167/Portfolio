@@ -6,10 +6,11 @@ declare module "*.pdf" {
 type SectionDataType = {
   title: string;
   description: string;
-  links: {
+  links?: {
     id: number;
     linkText: string;
     link: string;
   }[];
   linkLeft: boolean;
+  image?: string;
 };

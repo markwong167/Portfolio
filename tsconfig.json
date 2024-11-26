@@ -3,7 +3,7 @@
     "outDir": "./build/",
     "sourceMap": true,
     "strictNullChecks": true,
-    "module": "es6",
+    "module": "ES2022",
     "resolveJsonModule": true,
     "jsx": "react",
     "target": "es5",
