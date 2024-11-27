@@ -24,14 +24,6 @@ export const HeaderSubSection = styled.div`
     vertical-align: middle;
   }
 `;
-export const UnstyledAnchor = styled.a`
-  color: inherit;
-  text-decoration: inherit;
-`;
-export const UnstyledLink = styled(Link)`
-  color: inherit;
-  text-decoration: inherit;
-`;
 
 type SideBarAsideProps = { sidebarOpen: boolean };
 export const SideBarAside = styled.aside<SideBarAsideProps>`
