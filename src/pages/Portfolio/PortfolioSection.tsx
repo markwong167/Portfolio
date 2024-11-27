@@ -6,7 +6,7 @@ import { useIsMobile } from "../../hooks/use-mobile";
 export const PortfolioSection = ({ data }: { data: SectionDataType }) => {
   const isMobile = useIsMobile();
   return (
-    <div className='flex gap-4 flex-1'>
+    <div className='flex gap-4 flex-1' id={data.id}>
       <PorfolioSectionInfoCard data={data} isMobile={isMobile} />
       {!isMobile && data?.image && <PorfolioSectionPictureCard data={data} />}
     </div>

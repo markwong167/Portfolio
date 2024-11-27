@@ -8,58 +8,60 @@ import {
   SidebarMenu,
   SidebarMenuButton,
   SidebarMenuItem,
-  SidebarProvider,
 } from "../components/ui/sidebar";
-import { Calendar, Home, Inbox, Search, Settings } from "lucide-react";
+import * as sectionData from "../assets/sectionData/sectionData";
+import { Link, scroller } from "react-scroll";
+const sectionDataItems = [
+  sectionData.intro,
+  sectionData.leago,
+  sectionData.builderLynx,
+  sectionData.grg,
+].map((item) => ({
+  ...item,
+  url: `/#${item.id}`,
+  title: item.id === "intro" ? "Home" : item.title,
+}));
 
-const items = [
-  {
-    title: "Home",
-    url: "#",
-    icon: Home,
-  },
-  {
-    title: "Inbox",
-    url: "#",
-    icon: Inbox,
-  },
-  {
-    title: "Calendar",
-    url: "#",
-    icon: Calendar,
-  },
-  {
-    title: "Search",
-    url: "#",
-    icon: Search,
-  },
-  {
-    title: "Settings",
-    url: "#",
-    icon: Settings,
-  },
-];
-export const SideBarContainer = ({
-  sidebarOpen,
-  setSidebarOpen,
-}: {
-  sidebarOpen: boolean;
-  setSidebarOpen: (open: boolean) => void;
-}) => {
+const scrollTo = (id: string, offset: number) => {
+  scroller.scrollTo(id, {
+    duration: 800,
+    delay: 0,
+    smooth: "easeInOutQuart",
+    offset: offset,
+  });
+};
+export const SideBarContainer = ({ sidebarOpen }: { sidebarOpen: boolean }) => {
   return (
     <Sidebar variant='sidebar' collapsible='icon'>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
+          <SidebarGroupLabel className='text-lg text-nowrap'>
+            Mark's Portfolio
+          </SidebarGroupLabel>
           <SidebarGroupContent>
-            <SidebarMenu>
-              {items.map((item) => (
-                <SidebarMenuItem key={item.title}>
+            <SidebarMenu className='gap-3 mt-4'>
+              {sectionDataItems.map((item) => (
+                <SidebarMenuItem key={item.id}>
                   <SidebarMenuButton tooltip={item.title} asChild>
-                    <a href={item.url}>
-                      <item.icon />
-                      <span>{item.title}</span>
-                    </a>
+                    <div className='cursor-pointer'>
+                      <Link
+                        to={item.url}
+                        spy={true}
+                        smooth={true}
+                        offset={-100}
+                        onClick={() => scrollTo(item.id, -100)}
+                        className='flex gap-2 text-nowrap'
+                      >
+                        <item.icon
+                          className={
+                            sidebarOpen
+                              ? ""
+                              : "-translate-x-1 duration-150 ease-in-out"
+                          }
+                        />
+                        <span className='text-lg'>{item.title}</span>
+                      </Link>
+                    </div>
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
