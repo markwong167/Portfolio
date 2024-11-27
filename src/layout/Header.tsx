@@ -26,9 +26,6 @@ export const Header = ({
         <Link className='hover:underline' to='/Resume'>
           <h2 className='text-xl font-bold'>Resume</h2>
         </Link>
-        <Link className='hover:underline' to='/Contact'>
-          <h2 className='text-xl font-bold'>Contact</h2>
-        </Link>
         <a
           className='hover:underline'
           href='https://www.linkedin.com/in/markwong167/'

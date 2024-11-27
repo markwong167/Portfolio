@@ -16,7 +16,6 @@ import {
 } from "./components/ui/sidebar";
 import { SideBarContainer } from "./layout/SideBarContainer";
 import "./globals.css";
-import { ContactPage } from "./pages/ContactPage";
 import { useIsMobile } from "./hooks/use-mobile";
 
 const App = () => {
@@ -55,7 +54,6 @@ const App = () => {
                   <MainDiv>
                     <Routes>
                       <Route path='/Resume' element={<ResumePage />} />
-                      <Route path='/Contact' element={<ContactPage />} />
                       <Route path='/' element={<PortfolioPage />} />
                     </Routes>
                   </MainDiv>
