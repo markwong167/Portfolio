@@ -6,8 +6,15 @@ import {
 } from "./layout-style";
 import { FaExternalLinkAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import { Moon, Sun } from "lucide-react";
 
-export const Header = ({ toggleTheme }) => {
+export const Header = ({
+  currentTheme,
+  toggleTheme,
+}: {
+  currentTheme: string;
+  toggleTheme: () => void;
+}) => {
   return (
     <HeaderContainer>
       <HeaderSubSection>
@@ -42,7 +49,10 @@ export const Header = ({ toggleTheme }) => {
             Portfolio Code <FaExternalLinkAlt />
           </h2>
         </a>
-        <ThemeToggleButton onClick={toggleTheme}>🌓</ThemeToggleButton>
+        <ThemeToggleButton onClick={toggleTheme} className='flex gap-1'>
+          <Sun className={currentTheme === "light" ? "" : "opacity-30"} />
+          <Moon className={currentTheme === "dark" ? "" : "opacity-30"} />
+        </ThemeToggleButton>
       </HeaderSubSection>
     </HeaderContainer>
   );

@@ -36,12 +36,11 @@ const App = () => {
           <SidebarProvider open={sidebarOpen} onOpenChange={setSidebarOpen}>
             <BrowserRouter>
               <div className='w-full flex flex-col'>
-                <Header toggleTheme={toggleTheme} />
+                <Header currentTheme={theme} toggleTheme={toggleTheme} />
                 <MainWrapperDiv>
                   {!isMobile && (
                     <>
                       <SideBarContainer sidebarOpen={sidebarOpen} />
-
                       <SidebarTrigger
                         onClick={() => setSidebarOpen(true)}
                         style={{
@@ -50,7 +49,6 @@ const App = () => {
                             : SIDEBAR_WIDTH_ICON,
                         }}
                         className='mt-2 ml-1 fixed transition-all duration-200 ease-linear  [&_svg]:size-6'
-                        size='lg'
                       />
                     </>
                   )}
