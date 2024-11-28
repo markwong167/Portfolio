@@ -2,9 +2,7 @@
 
 # dependencies
 *node_modules
-/.pnp
-.pnp.js
-unitybuild/*
+
 
 # testing
 /coverage
@@ -32,3 +30,4 @@ yarn-error.log*
 *.ps
 *.svg
 *.mp4
+*.webp
