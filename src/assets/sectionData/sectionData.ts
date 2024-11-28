@@ -1,4 +1,4 @@
-import cow from "../images/cow-g67859e773_1280.jpg";
+import mark from "../images/P_20181203_171412.jpg";
 import leagoPng from "../images/leago.png";
 import grgWebp from "../images/grg.webp";
 import builderLynxPng from "../images/builderLynx.png";
@@ -17,7 +17,7 @@ export const intro = {
     },
   ],
   linkLeft: true,
-  image: cow,
+  image: mark,
   icon: Home,
 };
 export const builderLynx = {
