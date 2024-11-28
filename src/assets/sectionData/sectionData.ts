@@ -9,12 +9,12 @@ export const intro = {
   description:
     "I'm a Full Stack Developer with 4 years of experience building web applications specialized in building a great user experience. If you're looking for a developer who can help you build a great product, I'm your guy!",
   links: [
+    { id: 1, linkText: "Resume", link: "/Resume" },
     {
-      id: 1,
+      id: 2,
       linkText: "LinkedIn",
       link: "https://www.linkedin.com/in/markwong167/",
     },
-    { id: 2, linkText: "Go To My Resume", link: "/Resume" },
   ],
   linkLeft: true,
   image: cow,
@@ -25,7 +25,7 @@ export const builderLynx = {
   title: "Builder Lynx",
   description:
     "Builder Lynx is an all-encompassing platform for construction companies (builders) to manage their business.",
-  role: "My role was to build an all-in-one Digital Sales Office (Purchaser Portal) for builders to advertise, sell, and sign contracts like the Agreement of Purchase and Sale for their projects.",
+  role: "I built an all-in-one Digital Sales Office (Purchaser Portal) for builders to advertise, sell, and sign contracts like the Agreement of Purchase and Sale for their projects.",
   linkLeft: false,
   image: builderLynxPng,
   icon: Building2,
@@ -35,10 +35,17 @@ export const leago = {
   title: "Leago",
   description:
     "Leago is a tournament, club, rating, and membership management platform for mind games and their respective clubs and associations.",
-  role: " I am currently responsible for setting the standard for our frontend development and eliminating our accrued technical debt.",
+  role: "I'm setting the bar for frontend development and tackling our technical debt to leave things cleaner and easier to work with.",
   linkLeft: false,
   image: leagoPng,
   icon: Swords,
+  links: [
+    {
+      id: 1,
+      linkText: "Website",
+      link: "https://leago.gg",
+    },
+  ],
 };
 export const grg = {
   id: "grg",

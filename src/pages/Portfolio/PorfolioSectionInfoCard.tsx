@@ -9,6 +9,8 @@ import {
 import React from "react";
 import { PorfolioSectionPictureCard } from "./PorfolioSectionPictureCard";
 import { useNavigate } from "react-router";
+import { Link } from "react-router-dom";
+import { ExternalLink } from "lucide-react";
 
 export const PorfolioSectionInfoCard = ({
   data,
@@ -23,11 +25,15 @@ export const PorfolioSectionInfoCard = ({
       className={`flex flex-col h-full ${isMobile ? "w-full" : "max-w-md"}`}
     >
       <CardHeader>
-        <CardTitle className='text-6xl'>{data.title}</CardTitle>
+        <CardTitle className='text-5xl'>{data.title}</CardTitle>
       </CardHeader>
       <CardContent className='flex-grow flex flex-col gap-4'>
         <p className='text-xl'>{data.description}</p>
-        <p className='text-xl'>{data.role}</p>
+        {data.role && (
+          <span className='text-xl'>
+            <strong>Role:</strong> {data.role}
+          </span>
+        )}
         {isMobile && data?.image && (
           <div className='flex-grow'>
             <PorfolioSectionPictureCard data={data} />
@@ -40,17 +46,16 @@ export const PorfolioSectionInfoCard = ({
         } gap-2 justify-end mt-auto`}
       >
         {data.links?.map((link) => (
-          <Button
+          <Link
+            className='text-2xl hover:underline text-secondary hover:text-secondary-foreground flex items-center gap-2'
             key={link.id}
-            size={isMobile ? "lg" : "default"}
-            onClick={() =>
-              link.link.startsWith("/")
-                ? navigate(link.link)
-                : window.open(link.link, "_blank", "noreferrer noopener")
-            }
+            to={link.link}
+            target='_blank'
+            rel='noreferrer noopener'
           >
             {link.linkText}
-          </Button>
+            {!link.link.startsWith("/") && <ExternalLink />}
+          </Link>
         ))}
       </CardFooter>
     </Card>
