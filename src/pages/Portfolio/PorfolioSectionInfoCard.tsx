@@ -1,4 +1,3 @@
-import { Button } from "../../components/ui/button";
 import {
   Card,
   CardContent,
@@ -41,9 +40,9 @@ export const PorfolioSectionInfoCard = ({
         )}
       </CardContent>
       <CardFooter
-        className={`${data.linkLeft ? "items-start" : "items-end"} flex ${
-          isMobile ? "flex-row" : "flex-col"
-        } gap-2 justify-end mt-auto`}
+        className={`${
+          data.linkLeft ? "items-start" : "items-end"
+        } flex flex-col gap-2 justify-end mt-auto`}
       >
         {data.links?.map((link) => (
           <Link
