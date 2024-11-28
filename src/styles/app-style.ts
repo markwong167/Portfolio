@@ -12,7 +12,7 @@ export const MainWrapperDiv = styled.div`
   flex-direction: row;
   flex: 1;
   overflow: hidden;
-
+  justify-content: center;
   background-color: ${({ theme }) => theme.bodyBg};
   color: ${({ theme }) => theme.bodyText};
   /* color: light-dark(#333b3c, #dfdfdc);
