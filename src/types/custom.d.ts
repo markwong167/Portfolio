@@ -7,6 +7,7 @@ type SectionDataType = {
   id: string;
   title: string;
   description: string;
+  role?: string;
   links?: {
     id: number;
     linkText: string;

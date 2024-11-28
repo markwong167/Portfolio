@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import GlobalFonts from "./assets/fonts/fonts";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
@@ -17,12 +17,18 @@ import {
 import { SideBarContainer } from "./layout/SideBarContainer";
 import "./globals.css";
 import { useIsMobile } from "./hooks/use-mobile";
+import { Footer } from "./layout/Footer";
 
 const App = () => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [theme, setTheme] = useState(() =>
     window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
   );
+
+  useEffect(() => {
+    document.documentElement.classList.toggle("dark", theme === "dark");
+  }, [theme]);
+
   const toggleTheme = () => {
     setTheme((prev) => (prev === "light" ? "dark" : "light"));
   };
@@ -51,12 +57,15 @@ const App = () => {
                       />
                     </>
                   )}
-                  <MainDiv>
-                    <Routes>
-                      <Route path='/Resume' element={<ResumePage />} />
-                      <Route path='/' element={<PortfolioPage />} />
-                    </Routes>
-                  </MainDiv>
+                  <div>
+                    <MainDiv>
+                      <Routes>
+                        <Route path='/Resume' element={<ResumePage />} />
+                        <Route path='/' element={<PortfolioPage />} />
+                      </Routes>
+                    </MainDiv>
+                    <Footer />
+                  </div>
                 </MainWrapperDiv>
               </div>
             </BrowserRouter>

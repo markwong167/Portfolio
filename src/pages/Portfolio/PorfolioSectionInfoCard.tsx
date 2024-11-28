@@ -27,6 +27,7 @@ export const PorfolioSectionInfoCard = ({
       </CardHeader>
       <CardContent className='flex-grow flex flex-col gap-4'>
         <p className='text-xl'>{data.description}</p>
+        <p className='text-xl'>{data.role}</p>
         {isMobile && data?.image && (
           <div className='flex-grow'>
             <PorfolioSectionPictureCard data={data} />
