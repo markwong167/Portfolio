@@ -11,7 +11,7 @@ export const PorfolioSectionPictureCard = ({
         <img
           src={data?.image}
           alt={data.image}
-          className='w-full h-full object-cover'
+          className='w-full h-full object-cover max-h-[30rem]'
         />
       </CardContent>
     </Card>
