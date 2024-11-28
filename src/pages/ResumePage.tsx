@@ -1,5 +1,5 @@
 import React from "react";
-import samplePdf from "../assets/Mark_Wong_Resume.pdf";
+import samplePdf from "@/assets/Mark Wong Resume.pdf";
 
 export const ResumePage = () => {
   return (

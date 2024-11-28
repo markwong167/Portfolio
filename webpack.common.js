@@ -1,33 +1,29 @@
+const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
 module.exports = {
   entry: {
     main: "./src/index.tsx",
   },
   resolve: {
-    extensions: [".ts", ".tsx", ".js", ".json", ".d.ts"],
+    extensions: [".ts", ".tsx", ".js", ".json"],
+    alias: {
+      "@": path.resolve(__dirname, "src"),
+    },
   },
   module: {
     rules: [
       {
         test: /\.(woff(2)?|ttf|eot)(\?v=\d+\.\d+\.\d+)?$/,
-        use: [
-          {
-            loader: "file-loader",
-            options: {
-              name: "[name].[hash].[ext]",
-              outputPath: "fonts/",
-            },
-          },
-        ],
+        type: "asset/resource",
+        generator: {
+          filename: "fonts/[name][hash][ext]",
+        },
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg|webp)$/,
-        use: {
-          loader: "file-loader",
-          options: {
-            name: "[name].[hash].[ext]",
-            outputPath: "images",
-          },
+        test: /\.(png|jpg|jpeg|gif|svg|webp)$/i,
+        type: "asset/resource",
+        generator: {
+          filename: "assets/images/[name][ext]",
         },
       },
       {

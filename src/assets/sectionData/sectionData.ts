@@ -1,7 +1,7 @@
-import mark from "../images/P_20181203_171412.jpg";
-import leagoPng from "../images/leago.png";
-import grgWebp from "../images/grg.webp";
-import builderLynxPng from "../images/builderLynx.png";
+import mark from "@/assets/images/P_20181203_171412.jpg";
+import leagoJpg from "@/assets/images/leago.jpg";
+import grgWebp from "@/assets/images/grg.webp";
+import builderLynxPng from "@/assets/images/builderLynx.png";
 import { Home, Building2, Swords, Trees } from "lucide-react";
 export const intro = {
   id: "intro",
@@ -37,7 +37,7 @@ export const leago = {
     "Leago is a tournament, club, rating, and membership management platform for mind games and their respective clubs and associations.",
   role: "I'm setting the bar for frontend development and tackling our technical debt to leave things cleaner and easier to work with.",
   linkLeft: false,
-  image: leagoPng,
+  image: leagoJpg,
   icon: Swords,
   links: [
     {
