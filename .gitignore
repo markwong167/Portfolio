@@ -9,6 +9,7 @@
 
 # production
 /build
+/public
 /dist
 
 # misc
@@ -21,6 +22,7 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+*.cache
 *.zip
 *.gz
 *.png
