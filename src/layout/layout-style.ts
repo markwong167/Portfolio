@@ -1,4 +1,3 @@
-import { Link } from "react-router-dom";
 import styled from "styled-components";
 export const HeaderContainer = styled.div`
   position: sticky;
@@ -36,8 +35,6 @@ export const SideBarAside = styled.aside<SideBarAsideProps>`
   overflow-y: auto;
   color: ${({ theme }) => theme.sidebarText};
   background-color: ${({ theme }) => theme.sidebarBg};
-  /* color: light-dark(#333b3c, #dfdfdc);
-  background-color: light-dark(#cfcdca, #2a2a2a); */
   transition: transform 0.3s cubic-bezier(0.25, 1, 0.5, 1) ease;
 `;
 export const ThemeToggleButton = styled.button`

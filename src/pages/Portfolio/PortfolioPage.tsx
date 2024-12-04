@@ -1,10 +1,12 @@
 import React from "react";
 import { PortfolioSection } from "./PortfolioSection";
 import * as sectionData from "../../assets/sectionData/sectionData";
+import { useIsMobile } from "../../hooks/use-mobile";
 
 export const PortfolioPage = () => {
+  const isMobile = useIsMobile();
   return (
-    <div className='w-9/12 gap-6 flex flex-col'>
+    <div className={` gap-6 flex flex-col ${isMobile ? "w-11/12" : "w-9/12"}`}>
       <PortfolioSection data={sectionData.intro} layout='picRight' />
       <PortfolioSection data={sectionData.leago} layout='picLeft' />
       <PortfolioSection data={sectionData.builderLynx} layout='picRight' />

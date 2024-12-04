@@ -57,7 +57,7 @@ const App = () => {
                       />
                     </>
                   )}
-                  <div>
+                  <div className={`${isMobile ? "w-11/12" : ""}`}>
                     <MainDiv>
                       <Routes>
                         <Route path='/Resume' element={<ResumePage />} />
