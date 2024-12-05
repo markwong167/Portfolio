@@ -4,47 +4,24 @@ export const Footer = () => {
   const isMobile = useIsMobile();
   return (
     <div
-      className={`flex justify-around items-center h-[var(--footer-height)] bg-sidebar w-full text-2xl mt-6 rounded-lg`}
+      className={`flex justify-around h-[var(--footer-height)] bg-sidebar w-full text-2xl rounded-lg ${
+        isMobile === "M" ? " pl-5 text-lg flex-col" : "items-center"
+      }`}
     >
-      <div className='flex flex-1 items-center justify-center'>
-        {!isMobile ? (
-          <span>City: Toronto, Ontario</span>
-        ) : (
-          <div className='flex flex-col text-2xl'>
-            <strong>City</strong>
-            <p>Toronto, Ontario</p>
-          </div>
-        )}
-      </div>
-      <div className='flex flex-1 items-center justify-center'>
-        {!isMobile ? (
-          <a href='mailto:markwong167@gmail.com' className='hover:text-white'>
-            Email: markwong167@gmail.com
-          </a>
-        ) : (
-          <div className='flex flex-col text-2xl'>
-            <strong>Email</strong>
-            <p>markwong167@gmail.com</p>
-          </div>
-        )}
-      </div>
-      <div className='flex flex-1 items-center justify-center'>
-        {!isMobile ? (
-          <a
-            href='https://github.com/VLegatus'
-            className='hover:text-white'
-            target='_blank'
-            rel='noopener noreferrer'
-          >
-            Github: github.com/VLegatus
-          </a>
-        ) : (
-          <div className='flex flex-col text-2xl'>
-            <strong>Github</strong>
-            <p>github.com/VLegatus</p>
-          </div>
-        )}
-      </div>
+      <span>
+        <strong>City:</strong> Toronto, Ontario
+      </span>
+      <a href='mailto:markwong167@gmail.com' className='hover:text-white'>
+        <strong>Email:</strong> markwong167@gmail.com
+      </a>
+      <a
+        href='https://github.com/VLegatus'
+        className='hover:text-white'
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        <strong>Github:</strong> github.com/VLegatus
+      </a>
     </div>
   );
 };

@@ -13,13 +13,13 @@ export const PortfolioSection = ({
   const isMobile = useIsMobile();
   return (
     <div className='flex gap-5 flex-1' id={data.id}>
-      {!isMobile && layout === "picLeft" && (
+      {!["M", "T"].includes(isMobile) && layout === "picLeft" && (
         <PorfolioSectionPictureCard data={data} />
       )}
       <PorfolioSectionInfoCard data={data} isMobile={isMobile} />
-      {!isMobile && data?.image && layout === "picRight" && (
-        <PorfolioSectionPictureCard data={data} />
-      )}
+      {!["M", "T"].includes(isMobile) &&
+        data?.image &&
+        layout === "picRight" && <PorfolioSectionPictureCard data={data} />}
     </div>
   );
 };

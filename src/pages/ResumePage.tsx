@@ -7,15 +7,17 @@ export const ResumePage = () => {
   const isMobile = useIsMobile();
   return (
     <div
-      className={`relative w-9/12 h-[calc(100vh-var(--header-height)-2rem)] mx-auto rounded-lg overflow-hidden ${
-        isMobile ? "" : "border border-gray-300"
-      }`}
+      className={`relative  mx-auto rounded-lg overflow-hidden ${
+        isMobile === "M"
+          ? "h-[calc(100vh-var(--header-height)-var(--footer-height))]"
+          : "border border-gray-300 h-[calc(100vh-var(--header-height)-2rem)]"
+      } ${isMobile === "T" ? "w-11/12" : "w-9/12"}`}
     >
-      {isMobile ? (
+      {isMobile === "M" ? (
         <div className='flex flex-col mt-20 items-center h-full gap-20'>
-          <h4 className='text-6xl font-bold'>My Resume</h4>
+          <h4 className='text-3xl font-bold'>My Resume</h4>
           <Button
-            size='3xl'
+            size='xl'
             className='bg-primary text-primary-foreground'
             onClick={() => {
               window.open(samplePdf, "_blank");

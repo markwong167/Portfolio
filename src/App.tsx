@@ -43,7 +43,7 @@ const App = () => {
               <div className='w-full flex flex-col'>
                 <Header currentTheme={theme} toggleTheme={toggleTheme} />
                 <MainWrapperDiv>
-                  {!isMobile && (
+                  {isMobile !== "M" && (
                     <>
                       <SideBarContainer sidebarOpen={sidebarOpen} />
                       <SidebarTrigger
@@ -57,7 +57,7 @@ const App = () => {
                       />
                     </>
                   )}
-                  <div className={`${isMobile ? "w-11/12" : ""}`}>
+                  <div className={`${isMobile === "M" ? "w-11/12" : "w-full"}`}>
                     <MainDiv>
                       <Routes>
                         <Route path='/Resume' element={<ResumePage />} />

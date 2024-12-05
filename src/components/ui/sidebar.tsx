@@ -30,7 +30,7 @@ type SidebarContext = {
   setOpen: (open: boolean) => void;
   openMobile: boolean;
   setOpenMobile: (open: boolean) => void;
-  isMobile: boolean;
+  isMobile: string;
   toggleSidebar: () => void;
 };
 
@@ -89,7 +89,7 @@ const SidebarProvider = React.forwardRef<
 
     // Helper to toggle the sidebar.
     const toggleSidebar = React.useCallback(() => {
-      return isMobile
+      return isMobile === "M"
         ? setOpenMobile((open) => !open)
         : setOpen((open) => !open);
     }, [isMobile, setOpen, setOpenMobile]);
@@ -190,7 +190,7 @@ const Sidebar = React.forwardRef<
       );
     }
 
-    if (isMobile) {
+    if (isMobile === "M") {
       return (
         <Sheet open={openMobile} onOpenChange={setOpenMobile} {...props}>
           <SheetContent
@@ -581,7 +581,7 @@ const SidebarMenuButton = React.forwardRef<
         <TooltipContent
           side='right'
           align='center'
-          hidden={state !== "collapsed" || isMobile}
+          hidden={state !== "collapsed" || isMobile === "M"}
           {...tooltip}
         />
       </Tooltip>

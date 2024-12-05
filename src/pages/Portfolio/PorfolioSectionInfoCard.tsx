@@ -15,23 +15,37 @@ export const PorfolioSectionInfoCard = ({
   isMobile,
 }: {
   data: SectionDataType;
-  isMobile: boolean;
+  isMobile: string;
 }) => {
+  const isMobileOrTablet = ["M", "T"].includes(isMobile);
+  let titleTextSize = "text-5xl";
+  let bodyTextSize = "text-xl";
+  let linkTextSize = "text-2xl";
+  if (isMobile === "M") {
+    titleTextSize = "text-3xl";
+    bodyTextSize = "text-md";
+    linkTextSize = "text-xl";
+  } else if (isMobile === "T") {
+    bodyTextSize = "text-2xl";
+    linkTextSize = "text-3xl";
+  }
   return (
     <Card
-      className={`flex flex-col h-full ${isMobile ? "w-full" : "max-w-md"}`}
+      className={`flex flex-col h-full ${
+        isMobileOrTablet ? "w-full" : "max-w-md"
+      }`}
     >
       <CardHeader>
-        <CardTitle className='text-5xl'>{data.title}</CardTitle>
+        <CardTitle className={titleTextSize}>{data.title}</CardTitle>
       </CardHeader>
       <CardContent className='flex-grow flex flex-col gap-4'>
-        <p className={isMobile ? "text-3xl" : "text-xl"}>{data.description}</p>
+        <p className={bodyTextSize}>{data.description}</p>
         {data.role && (
-          <span className={isMobile ? "text-3xl" : "text-xl"}>
+          <span className={bodyTextSize}>
             <strong>Role:</strong> {data.role}
           </span>
         )}
-        {isMobile && data?.image && (
+        {isMobileOrTablet && data?.image && (
           <div className='flex-grow'>
             <PorfolioSectionPictureCard data={data} />
           </div>
@@ -39,14 +53,12 @@ export const PorfolioSectionInfoCard = ({
       </CardContent>
       <CardFooter
         className={`${data.linkLeft ? "items-start" : "items-end"} ${
-          isMobile ? "gap-7" : "gap-2"
+          isMobileOrTablet ? "gap-5" : "gap-2"
         } flex flex-col justify-end mt-auto`}
       >
         {data.links?.map((link) => (
           <Link
-            className={`hover:underline text-secondary hover:text-secondary-foreground flex items-center gap-2 ${
-              isMobile ? "text-4xl" : "text-2xl"
-            }`}
+            className={`hover:underline text-secondary hover:text-secondary-foreground flex items-center gap-2 ${linkTextSize}`}
             key={link.id}
             to={link.link}
             target='_blank'
