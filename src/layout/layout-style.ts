@@ -46,7 +46,6 @@ export const ThemeToggleButton = styled.button`
   vertical-align: middle;
   &:hover {
     color: var(--accent-color);
-    transform: scale(1.2);
   }
 `;
 

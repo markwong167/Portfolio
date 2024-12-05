@@ -26,6 +26,8 @@ const buttonVariants = cva(
         xl: "h-12 rounded-md px-10 text-xl",
         "2xl": "h-14 rounded-md px-12 text-2xl",
         "3xl": "h-16 rounded-md px-16 text-3xl",
+        mobileMenuIcon: "h-42 w-full text-3xl [&_svg]:size-10",
+        mobileLink: "h-42 w-full text-3xl [&_svg]:size-12",
         icon: "h-9 w-9",
       },
     },

@@ -38,6 +38,10 @@ module.exports = {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        mobileHeader: {
+          DEFAULT: "hsl(var(--mobile-header-bg))",
+          text: "hsl(var(--mobile-header-text))",
+        },
         header: {
           DEFAULT: "hsl(var(--header-bg))",
           text: "hsl(var(--header-text))",
