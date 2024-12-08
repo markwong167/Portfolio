@@ -7,8 +7,9 @@ module.exports = merge(common, {
   output: {
     path: path.resolve(__dirname, "build"),
     publicPath: "/",
-    filename: "[name].[contentHash].bundle.js",
+    filename: "[name].[contenthash].bundle.js",
     assetModuleFilename: "assets/[name][ext]",
+    clean: true,
   },
   plugins: [
     new HtmlWebpackPlugin({
