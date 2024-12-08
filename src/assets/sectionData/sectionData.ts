@@ -1,4 +1,4 @@
-import mark from "@/assets/images/P_20181203_171412.jpg";
+import mark from "@/assets/images/IMG_0301.jpg";
 import leagoJpg from "@/assets/images/leago.jpg";
 import grgWebp from "@/assets/images/grg.webp";
 import builderLynxPng from "@/assets/images/builderLynx.png";
@@ -29,6 +29,13 @@ export const builderLynx = {
   linkLeft: false,
   image: builderLynxPng,
   icon: Building2,
+  links: [
+    {
+      id: 58,
+      linkText: "Ask Me About Builder Lynx",
+      link: "mailto:markwong167@gmail.com",
+    },
+  ],
 };
 export const leago = {
   id: "leago",

@@ -8,7 +8,7 @@ import {
 import React from "react";
 import { PorfolioSectionPictureCard } from "./PorfolioSectionPictureCard";
 import { Link } from "react-router-dom";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, Mail } from "lucide-react";
 
 export const PorfolioSectionInfoCard = ({
   data,
@@ -56,18 +56,25 @@ export const PorfolioSectionInfoCard = ({
           isMobileOrTablet ? "gap-5" : "gap-2"
         } flex flex-col justify-end mt-auto`}
       >
-        {data.links?.map((link) => (
-          <Link
-            className={`hover:underline text-secondary hover:text-secondary-foreground flex items-center gap-2 ${linkTextSize}`}
-            key={link.id}
-            to={link.link}
-            target='_blank'
-            rel='noreferrer noopener'
-          >
-            {link.linkText}
-            {!link.link.startsWith("/") && <ExternalLink size={24} />}
-          </Link>
-        ))}
+        {data.links?.map((link) => {
+          if (!link.link) {
+            return <h3 className={linkTextSize}>{link.linkText}</h3>;
+          }
+          return (
+            <Link
+              className={`hover:underline text-secondary hover:text-secondary-foreground flex items-center gap-2 ${linkTextSize}`}
+              key={link.id}
+              to={link.link}
+              target='_blank'
+              rel='noreferrer noopener'
+            >
+              {link.linkText}
+              {!link.link.startsWith("/") &&
+                !link.link.startsWith("mailto:") && <ExternalLink size={24} />}
+              {link.link.startsWith("mailto:") && <Mail size={24} />}
+            </Link>
+          );
+        })}
       </CardFooter>
     </Card>
   );

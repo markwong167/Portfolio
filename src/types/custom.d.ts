@@ -11,7 +11,7 @@ type SectionDataType = {
   links?: {
     id: number;
     linkText: string;
-    link: string;
+    link?: string;
   }[];
   linkLeft: boolean;
   image?: string;
