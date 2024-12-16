@@ -51,7 +51,13 @@ const App = () => {
                     />
                   </>
                 )}
-                <div className={`${isMobile === "M" ? "w-11/12" : "w-full"}`}>
+                <div
+                  className={`${
+                    isMobile === "M"
+                      ? "w-11/12"
+                      : "w-full mt-[var(--header-height)]"
+                  }`}
+                >
                   <div className='flex py-4 overflow-y-auto justify-center'>
                     <Routes>
                       <Route path='/Resume' element={<ResumePage />} />
