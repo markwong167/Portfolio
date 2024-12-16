@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
-import GlobalFonts from "./assets/fonts/fonts";
 import { ThemeProvider as StyledThemeProvider } from "styled-components";
 import { lightTheme, darkTheme } from "./theme";
 import { AppDiv, MainDiv, MainWrapperDiv } from "./styles/app-style";
@@ -35,7 +34,6 @@ const App = () => {
   const isMobile = useIsMobile();
   return (
     <AppDiv>
-      <GlobalFonts />
       <IconContext.Provider value={{ style: { verticalAlign: "-10%" } }}>
         <StyledThemeProvider theme={theme === "light" ? lightTheme : darkTheme}>
           <SidebarProvider open={sidebarOpen} onOpenChange={setSidebarOpen}>

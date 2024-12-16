@@ -4,6 +4,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./index.html"],
   theme: {
     extend: {
+      fontFamily: {
+        sans: ["Roboto", "sans-serif"],
+      },
       colors: {
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",

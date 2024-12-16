@@ -1,0 +1,7 @@
+@font-face {
+  font-family: "Roboto";
+  src: local("Roboto"), url("./roboto-v20-latin-regular.woff2") format("woff2"),
+    url("./roboto-v20-latin-regular.woff") format("woff");
+  font-weight: 300;
+  font-style: normal;
+}
