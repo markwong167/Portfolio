@@ -17,9 +17,17 @@ export const CallToAction = ({ isMobile }: { isMobile: string }) => {
   }
   return (
     <>
-      <Card className='flex flex-col justify-center items-center h-full w-full gap-8 pt-6 pb-12'>
+      <Card
+        className={`flex flex-col justify-center items-center h-full w-full ${
+          isMobile === "M" ? "gap-3 pt-4 pb-6" : "gap-8 pt-6 pb-12"
+        }`}
+      >
         <h2 className={titleTextSize}>Let's work together</h2>
-        <div className='flex flex-row gap-12'>
+        <div
+          className={`flex ${
+            isMobile === "M" ? "flex-col gap-2" : "flex-row gap-12"
+          }`}
+        >
           <Link
             to='https://www.linkedin.com/in/markwong167/'
             target='_blank'
