@@ -74,10 +74,8 @@ export const Header = ({
   }
   return (
     <div
-      style={{
-        backgroundColor: "hsl(var(--header-bg))",
-      }}
-      className={`sticky top-0 z-50 h-[var(--header-height)] flex items-center justify-between py-3 text-header-text`}
+      className={`sticky top-0 z-50 h-[var(--header-height)] flex items-center justify-between py-3 text-header-text
+        bg-[hsl(var(--header-bg))]`}
     >
       <div className='flex items-center justify-between gap-6 px-4 text-center'>
         <Link className='hover:underline' to='/'>
