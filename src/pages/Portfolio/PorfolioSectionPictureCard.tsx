@@ -7,13 +7,11 @@ export const PorfolioSectionPictureCard = ({
 }) => {
   return (
     <Card className='flex-1 overflow-hidden'>
-      <CardContent className='p-0'>
-        <img
-          src={data?.image}
-          alt={data.image}
-          className='w-full h-full object-cover max-h-[30rem]'
-        />
-      </CardContent>
+      <img
+        src={data?.image}
+        alt={data.image}
+        className='w-full h-full object-cover max-h-[30rem]'
+      />
     </Card>
   );
 };
