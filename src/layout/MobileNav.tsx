@@ -32,28 +32,26 @@ export default function MobileNav({
       </SheetTrigger>
 
       {/* isMobile is already caught in parent */}
-      <SheetContent side='top' isMobile>
+      <SheetContent side='top'>
         <div className='flex flex-col items-start w-full h-screen mt-20 gap-10'>
           {navItems.map((item) => (
-            <>
-              <Button
-                key={item.id}
-                variant='ghost'
-                size='mobileLink'
-                onClick={() => {
-                  setOpen(false);
-                  if (item.isExternalLink) {
-                    window.open(item.link, "_blank");
-                  } else {
-                    navigate(item.link);
-                  }
-                }}
-                className='justify-start ml-4 gap-10'
-              >
-                {item.icon}
-                {item.mobileName}
-              </Button>
-            </>
+            <Button
+              key={item.id}
+              variant='ghost'
+              size='mobileLink'
+              onClick={() => {
+                setOpen(false);
+                if (item.isExternalLink) {
+                  window.open(item.link, "_blank");
+                } else {
+                  navigate(item.link);
+                }
+              }}
+              className='justify-start ml-4 gap-10'
+            >
+              {item.icon}
+              {item.mobileName}
+            </Button>
           ))}
           <button
             onClick={toggleTheme}
