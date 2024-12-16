@@ -4,7 +4,6 @@ import { Button } from "../components/ui/button";
 import { Menu as MenuIcon } from "lucide-react";
 import { NavItem } from "./Header";
 import { useNavigate } from "react-router-dom";
-import { ThemeToggleButton } from "./layout-style";
 import { Sun, Moon } from "lucide-react";
 export default function MobileNav({
   navItems,
@@ -56,13 +55,13 @@ export default function MobileNav({
               </Button>
             </>
           ))}
-          <ThemeToggleButton
+          <button
             onClick={toggleTheme}
             className='flex gap-10 justify-center w-full [&_svg]:size-20 mt-20'
           >
             <Sun className={currentTheme === "light" ? "" : "opacity-30"} />
             <Moon className={currentTheme === "dark" ? "" : "opacity-30"} />
-          </ThemeToggleButton>
+          </button>
         </div>
       </SheetContent>
     </Sheet>

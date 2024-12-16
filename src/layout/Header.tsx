@@ -1,5 +1,4 @@
 import React from "react";
-import { ThemeToggleButton, HeaderSubSection } from "./layout-style";
 import {
   FaExternalLinkAlt,
   FaLinkedin,
@@ -80,24 +79,25 @@ export const Header = ({
       }}
       className={`sticky top-0 z-50 h-[var(--header-height)] flex items-center justify-between py-3 text-header-text`}
     >
-      <HeaderSubSection>
+      <div className='flex items-center justify-between gap-6 px-4 text-center'>
         <Link className='hover:underline' to='/'>
           <h1 className='text-2xl font-bold'>Mark Wong</h1>
         </Link>
-      </HeaderSubSection>
-      <HeaderSubSection>
+      </div>
+      <div className='flex items-center justify-between gap-6 px-4 text-center'>
         {navItems
           .filter((item) => item.name !== "Mark Wong")
           .map((item) => {
             if (!item.isExternalLink) {
               return (
-                <Link className='hover:underline' to={item.link}>
+                <Link key={item.id} className='hover:underline' to={item.link}>
                   <h2 className={`font-bold text-xl`}>{item.name}</h2>
                 </Link>
               );
             }
             return (
               <a
+                key={item.id}
                 className='hover:underline'
                 href={item.link}
                 target='blank'
@@ -110,11 +110,11 @@ export const Header = ({
             );
           })}
 
-        <ThemeToggleButton onClick={toggleTheme} className='flex gap-1'>
+        <button onClick={toggleTheme} className='flex gap-1'>
           <Sun className={currentTheme === "light" ? "" : "opacity-30"} />
           <Moon className={currentTheme === "dark" ? "" : "opacity-30"} />
-        </ThemeToggleButton>
-      </HeaderSubSection>
+        </button>
+      </div>
     </div>
   );
 };
