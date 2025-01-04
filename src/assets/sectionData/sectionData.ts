@@ -42,7 +42,7 @@ export const leago = {
   title: "Leago",
   description:
     "Leago is a tournament, club, rating, and membership management platform for mind games and their respective clubs and associations.",
-  role: "I'm setting the bar for frontend development and tackling our technical debt to leave things cleaner and easier to work with.",
+  role: "Revamped the frontend, tackling our technical debt to leave things cleaner and easier to work with and contributed to the backend to improve the overall performance of the platform.",
   linkLeft: false,
   image: leagoJpg,
   icon: Swords,
@@ -59,7 +59,7 @@ export const grg = {
   title: "Grassroots Greens",
   description:
     "The go-to platform for eco-conscious individuals to connect, organize events, and drive positive environmental change.",
-  role: "As the lead developer, I was responsible for building the frontend and backend of the platform.",
+  role: "As the lead developer, I was responsible for building the frontend, backend, and devops of the platform.",
   links: [
     {
       id: 1,

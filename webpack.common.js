@@ -1,5 +1,6 @@
 const path = require("path");
 const CopyWebpackPlugin = require("copy-webpack-plugin");
+// const { BundleAnalyzerPlugin } = require("webpack-bundle-analyzer");
 module.exports = {
   entry: {
     main: "./src/index.tsx",
@@ -20,7 +21,29 @@ module.exports = {
         },
       },
       {
-        test: /\.(png|jpg|jpeg|gif|svg|webp)$/i,
+        test: /\.svg$/i,
+        type: "asset",
+        resourceQuery: /url/,
+      },
+      {
+        test: /\.svg$/i,
+        issuer: /\.[jt]sx?$/,
+        resourceQuery: { not: [/url/] },
+        use: [
+          {
+            loader: "@svgr/webpack",
+            options: {
+              svgo: true,
+              svgoConfig: {
+                plugins: [{ name: "removeViewBox", active: false }],
+              },
+            },
+          },
+          "url-loader",
+        ],
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif|webp)$/i,
         type: "asset/resource",
         generator: {
           filename: "assets/images/[name][ext]",
@@ -45,5 +68,6 @@ module.exports = {
     new CopyWebpackPlugin({
       patterns: [{ from: "public", to: "./public" }],
     }),
+    // new BundleAnalyzerPlugin(),
   ],
 };

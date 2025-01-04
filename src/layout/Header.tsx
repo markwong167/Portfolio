@@ -1,15 +1,16 @@
 import React from "react";
-import {
-  FaExternalLinkAlt,
-  FaLinkedin,
-  FaHome,
-  FaFilePdf,
-} from "react-icons/fa";
-import { FaGithub } from "react-icons/fa";
 import { Link } from "react-router-dom";
-import { Moon, Sun } from "lucide-react";
+import {
+  ExternalLinkIcon,
+  FileIcon,
+  HomeIcon,
+  LinkedinIcon,
+  Moon,
+  Sun,
+} from "lucide-react";
 import { useIsMobile } from "../hooks/use-mobile";
 import MobileNav from "./MobileNav";
+import { ReactComponent as GithubIcon } from "@/assets/images/github.svg";
 
 export type NavItem = {
   id: string;
@@ -27,7 +28,7 @@ const navItems: NavItem[] = [
     mobileName: "Home",
     link: "/",
     isExternalLink: false,
-    icon: <FaHome />,
+    icon: <HomeIcon />,
   },
   {
     id: "resume",
@@ -35,7 +36,7 @@ const navItems: NavItem[] = [
     mobileName: "Resume",
     link: "/Resume",
     isExternalLink: false,
-    icon: <FaFilePdf />,
+    icon: <FileIcon />,
   },
   {
     id: "linkedin",
@@ -43,7 +44,7 @@ const navItems: NavItem[] = [
     mobileName: "LinkedIn",
     link: "https://www.linkedin.com/in/markwong167/",
     isExternalLink: true,
-    icon: <FaLinkedin />,
+    icon: <LinkedinIcon />,
   },
   {
     id: "portfolio",
@@ -51,7 +52,7 @@ const navItems: NavItem[] = [
     mobileName: "Portfolio Code",
     link: "https://github.com/VLegatus/Portfolio",
     isExternalLink: true,
-    icon: <FaGithub />,
+    icon: <GithubIcon style={{ fill: "white" }} />,
   },
 ];
 
@@ -102,7 +103,7 @@ export const Header = ({
                 rel='noreferrer noopener'
               >
                 <h2 className={`font-bold flex items-center gap-2 text-xl`}>
-                  {item.name} <FaExternalLinkAlt />
+                  {item.name} <ExternalLinkIcon />
                 </h2>
               </a>
             );

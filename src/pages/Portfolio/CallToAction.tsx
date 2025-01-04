@@ -1,7 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import { FaEnvelope, FaLinkedin } from "react-icons/fa";
 import { Card } from "../../components/ui/card";
+import { LinkedinIcon, MailIcon } from "lucide-react";
 export const CallToAction = ({ isMobile }: { isMobile: string }) => {
   let titleTextSize = "text-4xl";
   let bodyTextSize = "text-xl";
@@ -33,7 +33,7 @@ export const CallToAction = ({ isMobile }: { isMobile: string }) => {
             rel='noreferrer noopener'
             className={`${linkTextSize} flex flex-row gap-2 items-center hover:underline text-secondary hover:text-secondary-foreground`}
           >
-            <FaLinkedin size={24} /> Connect With Me
+            <LinkedinIcon size={24} /> Connect With Me
           </Link>
           <Link
             to='mailto:markwong167@gmail.com'
@@ -41,7 +41,7 @@ export const CallToAction = ({ isMobile }: { isMobile: string }) => {
             rel='noreferrer noopener'
             className={`${linkTextSize} flex flex-row gap-2 items-center hover:underline text-secondary hover:text-secondary-foreground`}
           >
-            <FaEnvelope size={24} /> Email Me
+            <MailIcon size={24} /> Email Me
           </Link>
         </div>
       </Card>
