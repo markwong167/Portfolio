@@ -1,4 +1,4 @@
-import mark from "@/assets/images/IMG_0301.jpg";
+import mark from "@/assets/images/Mark_Wong.webp";
 import leagoJpg from "@/assets/images/leago.jpg";
 import grgWebp from "@/assets/images/grg.webp";
 import builderLynxPng from "@/assets/images/builderLynx.png";

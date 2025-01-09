@@ -15,12 +15,12 @@ export const Footer = () => {
         <strong>Email:</strong> markwong167@gmail.com
       </a>
       <a
-        href='https://github.com/VLegatus'
+        href='https://github.com/markwong167'
         className='hover:text-white'
         target='_blank'
         rel='noopener noreferrer'
       >
-        <strong>Github:</strong> github.com/VLegatus
+        <strong>Github:</strong> github.com/markwong167
       </a>
     </div>
   );

@@ -50,7 +50,7 @@ const navItems: NavItem[] = [
     id: "portfolio",
     name: "Portfolio Code",
     mobileName: "Portfolio Code",
-    link: "https://github.com/VLegatus/Portfolio",
+    link: "https://github.com/markwong167/Portfolio",
     isExternalLink: true,
     icon: <GithubIcon style={{ fill: "white" }} />,
   },
