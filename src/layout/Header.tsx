@@ -109,7 +109,11 @@ export const Header = ({
             );
           })}
 
-        <button onClick={toggleTheme} className='flex gap-1'>
+        <button
+          aria-label='Toggle Theme'
+          onClick={toggleTheme}
+          className='flex gap-1'
+        >
           <Sun className={currentTheme === "light" ? "" : "opacity-30"} />
           <Moon className={currentTheme === "dark" ? "" : "opacity-30"} />
         </button>

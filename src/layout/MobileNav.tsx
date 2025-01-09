@@ -25,7 +25,11 @@ export default function MobileNav({
           }}
           className={`sticky top-0 z-50 h-[var(--mobile-header-height)] flex items-center justify-between text-header-text`}
         >
-          <Button variant='ghost' size='mobileMenuIcon'>
+          <Button
+            aria-label='Toggle Mobile Navigation'
+            variant='ghost'
+            size='mobileMenuIcon'
+          >
             <MenuIcon />
           </Button>
         </div>
@@ -37,6 +41,7 @@ export default function MobileNav({
           {navItems.map((item) => (
             <Button
               key={item.id}
+              aria-label={item.mobileName}
               variant='ghost'
               size='mobileLink'
               onClick={() => {
@@ -54,6 +59,7 @@ export default function MobileNav({
             </Button>
           ))}
           <button
+            aria-label='Toggle Theme'
             onClick={toggleTheme}
             className='flex gap-10 justify-center w-full [&_svg]:size-20 mt-20'
           >
