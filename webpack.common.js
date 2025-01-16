@@ -66,7 +66,10 @@ module.exports = {
   },
   plugins: [
     new CopyWebpackPlugin({
-      patterns: [{ from: "public", to: "./public" }],
+      patterns: [
+        { from: "public", to: "./public" },
+        { from: "public/robots.txt", to: "./robots.txt" },
+      ],
     }),
     // new BundleAnalyzerPlugin(),
   ],

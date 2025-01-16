@@ -1,7 +1,7 @@
 import mark from "@/assets/images/Mark_Wong.webp";
-import leagoJpg from "@/assets/images/leago.jpg";
+import leagoJpg from "@/assets/images/leago.webp";
 import grgWebp from "@/assets/images/grg.webp";
-import builderLynxPng from "@/assets/images/builderLynx.png";
+import builderLynxPng from "@/assets/images/builderLynx.webp";
 import { Home, Building2, Swords, Trees } from "lucide-react";
 export const intro = {
   id: "intro",
