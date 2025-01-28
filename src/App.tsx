@@ -45,7 +45,7 @@ const App = () => {
                     style={{
                       left: sidebarOpen ? SIDEBAR_WIDTH : SIDEBAR_WIDTH_ICON,
                     }}
-                    className='mt-2 ml-1 fixed transition-all duration-200 ease-linear  [&_svg]:size-6'
+                    className='mt-[calc(var(--header-height)+1rem)] ml-1 fixed transition-all duration-200 ease-linear [&_svg]:size-6'
                   />
                 </>
               )}
