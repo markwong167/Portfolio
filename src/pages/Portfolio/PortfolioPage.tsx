@@ -3,6 +3,7 @@ import { PortfolioSection } from "./PortfolioSection";
 import * as sectionData from "../../assets/sectionData/sectionData";
 import { useIsMobile } from "../../hooks/use-mobile";
 import { CallToAction } from "./CallToAction";
+import { PortfolioSectionIntro } from "./PortfolioSectionIntro";
 
 export const PortfolioPage = () => {
   const isMobile = useIsMobile();
@@ -12,7 +13,7 @@ export const PortfolioPage = () => {
         isMobile === "M" ? "w-11/12" : "w-7/12"
       }`}
     >
-      <PortfolioSection data={sectionData.intro} layout='picRight' />
+      <PortfolioSectionIntro data={sectionData.intro} isMobile={isMobile} />
       <PortfolioSection data={sectionData.leago} layout='picLeft' />
       <PortfolioSection data={sectionData.builderLynx} layout='picRight' />
       <PortfolioSection data={sectionData.grg} layout='picLeft' />

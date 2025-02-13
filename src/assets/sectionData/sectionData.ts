@@ -7,7 +7,7 @@ export const intro = {
   id: "intro",
   title: "Hi, I'm Mark!",
   description:
-    "I'm a Software Developer with 5 years of experience creating great web applications specializing in building great user experiences. If you're looking to create a scalable, performant experience for your users, look no further.",
+    "I'm a Software Developer with 5 years of experience creating web apps. I specialize in delivering great user experiences through scalable, performant solutions.",
   links: [
     { id: 1, linkText: "Resume", link: "/Resume" },
     {

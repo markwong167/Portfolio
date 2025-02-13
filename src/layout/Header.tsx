@@ -75,8 +75,8 @@ export const Header = ({
   }
   return (
     <div
-      className={`fixed w-full top-0 z-50 h-[var(--header-height)] flex items-center justify-between py-3 text-header-text
-        bg-[hsl(var(--header-bg))]`}
+      className={`fixed w-full top-0 z-50 h-[var(--header-height)] dark:border-b-2 dark:border-white flex items-center justify-between py-3 text-header-text
+        bg-gradient-305 from-blue-200 to-[hsl(var(--header-bg))] dark:from-[hsl(var(--header-bg))] dark:to-slate-600`}
     >
       <div className='flex items-center justify-between gap-6 px-4 text-center'>
         <Link className='hover:underline' to='/'>

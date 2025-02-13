@@ -4,6 +4,9 @@ module.exports = {
   content: ["./src/**/*.{js,jsx,ts,tsx}", "./index.html"],
   theme: {
     extend: {
+      backgroundImage: {
+        "gradient-305": "linear-gradient(305deg, var(--tw-gradient-stops))",
+      },
       fontFamily: {
         sans: ["Roboto", "sans-serif"],
       },

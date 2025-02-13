@@ -42,7 +42,7 @@ export const SideBarContainer = ({ sidebarOpen }: { sidebarOpen: boolean }) => {
     <Sidebar variant='sidebar' collapsible='icon'>
       <SidebarContent>
         <SidebarGroup>
-          <SidebarGroupLabel className='text-lg text-nowrap'>
+          <SidebarGroupLabel className='text-lg text-nowrap mt-2'>
             Mark's Portfolio
           </SidebarGroupLabel>
           <SidebarGroupContent>
