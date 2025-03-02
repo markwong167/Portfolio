@@ -17,6 +17,7 @@ const sectionDataItems = [
   sectionData.intro,
   sectionData.leago,
   sectionData.builderLynx,
+  sectionData.aiFounded,
   sectionData.grg,
 ].map((item) => ({
   ...item,
