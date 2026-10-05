@@ -2,7 +2,6 @@ import React from "react";
 import { Link } from "react-router-dom";
 import {
   ExternalLinkIcon,
-  FileIcon,
   HomeIcon,
   Moon,
   Sun,
@@ -29,14 +28,6 @@ const navItems: NavItem[] = [
     link: "/",
     isExternalLink: false,
     icon: <HomeIcon />,
-  },
-  {
-    id: "resume",
-    name: "Resume",
-    mobileName: "Resume",
-    link: "/Resume",
-    isExternalLink: false,
-    icon: <FileIcon />,
   },
   {
     id: "linkedin",
