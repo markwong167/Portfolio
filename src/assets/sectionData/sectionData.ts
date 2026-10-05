@@ -10,9 +10,8 @@ export const intro = {
   description:
     "I'm a Software Developer with 5 years of experience creating web apps. I specialize in delivering great user experiences through scalable, performant solutions.",
   links: [
-    { id: 1, linkText: "Resume", link: "/Resume" },
     {
-      id: 2,
+      id: 1,
       linkText: "LinkedIn",
       link: "https://www.linkedin.com/in/markwong167/",
     },

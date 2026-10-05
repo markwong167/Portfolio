@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import { PortfolioPage } from "./pages/Portfolio/PortfolioPage";
-import { ResumePage } from "./pages/ResumePage";
 import { Header } from "./layout/Header";
 import {
   SIDEBAR_WIDTH,
@@ -58,7 +57,6 @@ const App = () => {
               >
                 <div className='flex py-4 overflow-y-auto justify-center'>
                   <Routes>
-                    <Route path='/Resume' element={<ResumePage />} />
                     <Route path='/' element={<PortfolioPage />} />
                   </Routes>
                 </div>

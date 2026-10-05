@@ -11,8 +11,6 @@ import {
 } from "../components/ui/sidebar";
 import * as sectionData from "../assets/sectionData/sectionData";
 import { Link, scroller } from "react-scroll";
-import { useLocation, useNavigate } from "react-router-dom";
-import { ArrowLeft } from "lucide-react";
 const sectionDataItems = [
   sectionData.intro,
   sectionData.leago,
@@ -24,9 +22,6 @@ const sectionDataItems = [
   url: `/#${item.id}`,
   title: item.id === "intro" ? "Introduction" : item.title,
 }));
-const nonPortfolioItems = [
-  { id: "backToHome", title: "Back To Portfolio", url: "/", icon: ArrowLeft },
-];
 
 const scrollTo = (id: string, offset: number) => {
   scroller.scrollTo(id, {
@@ -37,8 +32,6 @@ const scrollTo = (id: string, offset: number) => {
   });
 };
 export const SideBarContainer = ({ sidebarOpen }: { sidebarOpen: boolean }) => {
-  const location = useLocation();
-  const navigate = useNavigate();
   return (
     <Sidebar variant='sidebar' collapsible='icon'>
       <SidebarContent>
@@ -48,10 +41,7 @@ export const SideBarContainer = ({ sidebarOpen }: { sidebarOpen: boolean }) => {
           </SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu className='gap-3 mt-4'>
-              {(location.pathname !== "/"
-                ? nonPortfolioItems
-                : sectionDataItems
-              ).map((item) => (
+              {sectionDataItems.map((item) => (
                 <SidebarMenuItem key={item.id}>
                   <SidebarMenuButton tooltip={item.title} asChild>
                     <div className='cursor-pointer'>
@@ -60,11 +50,7 @@ export const SideBarContainer = ({ sidebarOpen }: { sidebarOpen: boolean }) => {
                         spy={true}
                         smooth={true}
                         offset={-100}
-                        onClick={() =>
-                          location.pathname !== "/"
-                            ? navigate(item.url)
-                            : scrollTo(item.id, -100)
-                        }
+                        onClick={() => scrollTo(item.id, -100)}
                         className='flex gap-2 text-nowrap'
                       >
                         <item.icon
