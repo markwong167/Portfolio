@@ -1,7 +1,8 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { Card } from "../../components/ui/card";
-import { LinkedinIcon, MailIcon } from "lucide-react";
+import { MailIcon } from "lucide-react";
+import LinkedinIcon from "../../components/LinkedinIcon";
 export const CallToAction = ({ isMobile }: { isMobile: string }) => {
   let titleTextSize = "text-4xl";
   let bodyTextSize = "text-xl";
