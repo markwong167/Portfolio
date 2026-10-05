@@ -1,8 +1,9 @@
 import mark from "@/assets/images/Mark_Wong.webp";
 import leagoJpg from "@/assets/images/leago.webp";
 import aiFoundedJpg from "@/assets/images/aiFounded.webp";
+import greenPartyWebp from "@/assets/images/greenParty.webp";
 import builderLynxPng from "@/assets/images/builderLynx.webp";
-import { Home, Building2, Swords, ChartBar } from "lucide-react";
+import { Home, Building2, Swords, Trees, ChartBar } from "lucide-react";
 export const intro = {
   id: "intro",
   title: "Hi, I'm Mark!",
@@ -18,6 +19,23 @@ export const intro = {
   linkLeft: true,
   image: mark,
   icon: Home,
+};
+export const greenParty = {
+  id: "greenParty",
+  title: "Green Party of Ontario",
+  description:
+    "Canopy is a WordPress multisite that consolidates the party's riding association and candidate campaign websites under one centrally-managed system, alongside the main gpo.ca site.",
+  role: "As a co-op developer, I wrote Canopy's design documentation and architecture decisions, built its core theme and reusable sections in PHP and TypeScript, and integrated it with Qomon so admins can launch a campaign site with donations and volunteer intake in place of a 2-4 week developer-led build.",
+  linkLeft: false,
+  image: greenPartyWebp,
+  icon: Trees,
+  links: [
+    {
+      id: 1,
+      linkText: "gpo.ca",
+      link: "https://gpo.ca",
+    },
+  ],
 };
 export const builderLynx = {
   id: "builderLynx",

@@ -16,9 +16,10 @@ export const PortfolioPage = () => {
       }`}
     >
       <PortfolioSectionIntro data={sectionData.intro} isMobile={isMobile} />
-      <PortfolioSection data={sectionData.leago} layout='picLeft' />
-      <PortfolioSection data={sectionData.builderLynx} layout='picRight' />
-      <PortfolioSection data={sectionData.aiFounded} layout='picLeft' />
+      <PortfolioSection data={sectionData.greenParty} layout='picLeft' />
+      <PortfolioSection data={sectionData.leago} layout='picRight' />
+      <PortfolioSection data={sectionData.builderLynx} layout='picLeft' />
+      <PortfolioSection data={sectionData.aiFounded} layout='picRight' />
       <CallToAction isMobile={isMobile} />
     </div>
   );

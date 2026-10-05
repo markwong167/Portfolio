@@ -15,6 +15,7 @@ import * as sectionData from "../assets/sectionData/sectionData";
 import { Link, scroller } from "react-scroll";
 const sectionDataItems = [
   sectionData.intro,
+  sectionData.greenParty,
   sectionData.leago,
   sectionData.builderLynx,
   sectionData.aiFounded,
