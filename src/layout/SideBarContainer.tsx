@@ -16,6 +16,7 @@ import { Link, scroller } from "react-scroll";
 const sectionDataItems = [
   sectionData.intro,
   sectionData.greenParty,
+  sectionData.usChess,
   sectionData.leago,
   sectionData.builderLynx,
   sectionData.aiFounded,
