@@ -1,5 +1,7 @@
+"use client";
+
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import {
   ExternalLinkIcon,
   HomeIcon,
@@ -9,7 +11,7 @@ import {
 import { useIsMobile } from "../hooks/use-mobile";
 import MobileNav from "./MobileNav";
 import LinkedinIcon from "../components/LinkedinIcon";
-import { ReactComponent as GithubIcon } from "@/assets/images/github.svg";
+import GithubIcon from "@/assets/images/github.svg";
 
 export type NavItem = {
   id: string;
@@ -70,7 +72,7 @@ export const Header = ({
         bg-gradient-305 from-blue-200 to-[hsl(var(--header-bg))] dark:from-[hsl(var(--header-bg))] dark:to-slate-600`}
     >
       <div className='flex items-center justify-between gap-6 px-4 text-center'>
-        <Link className='hover:underline' to='/'>
+        <Link className='hover:underline' href='/'>
           <h1 className='text-2xl font-bold'>Mark Wong</h1>
         </Link>
       </div>
@@ -80,7 +82,7 @@ export const Header = ({
           .map((item) => {
             if (!item.isExternalLink) {
               return (
-                <Link key={item.id} className='hover:underline' to={item.link}>
+                <Link key={item.id} className='hover:underline' href={item.link}>
                   <h2 className={`font-bold text-xl`}>{item.name}</h2>
                 </Link>
               );

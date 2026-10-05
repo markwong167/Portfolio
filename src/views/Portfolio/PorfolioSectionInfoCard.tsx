@@ -1,3 +1,5 @@
+"use client";
+
 import {
   Card,
   CardContent,
@@ -7,7 +9,7 @@ import {
 } from "../../components/ui/card";
 import React from "react";
 import { PorfolioSectionPictureCard } from "./PorfolioSectionPictureCard";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { ExternalLink, Mail } from "lucide-react";
 
 export const PorfolioSectionInfoCard = ({
@@ -64,7 +66,7 @@ export const PorfolioSectionInfoCard = ({
             <Link
               className={`hover:underline text-secondary hover:text-secondary-foreground flex items-center gap-2 ${linkTextSize}`}
               key={link.id}
-              to={link.link}
+              href={link.link}
               target='_blank'
               rel='noreferrer noopener'
             >

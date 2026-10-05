@@ -1,3 +1,5 @@
+"use client";
+
 import { Card, CardContent } from "../../components/ui/card";
 import React from "react";
 export const PorfolioSectionPictureCard = ({
@@ -8,8 +10,8 @@ export const PorfolioSectionPictureCard = ({
   return (
     <Card className='flex-1 overflow-hidden'>
       <img
-        src={data?.image}
-        alt={data.image}
+        src={data.image?.src}
+        alt={data.title}
         className='w-full h-full object-cover max-h-[30rem]'
       />
     </Card>

@@ -9,5 +9,5 @@ type SectionDataType = {
     link?: string;
   }[];
   linkLeft: boolean;
-  image?: string;
+  image?: import("next/image").StaticImageData;
 };
