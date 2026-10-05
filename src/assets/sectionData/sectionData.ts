@@ -3,6 +3,7 @@ import leagoJpg from "@/assets/images/leago.webp";
 import aiFoundedJpg from "@/assets/images/aiFounded.webp";
 import greenPartyWebp from "@/assets/images/greenParty.webp";
 import builderLynxPng from "@/assets/images/builderLynx.webp";
+import usChessWebp from "@/assets/images/usChess.webp";
 import { Home, Building2, Swords, Crown, Trees, ChartBar } from "lucide-react";
 export const intro = {
   id: "intro",
@@ -67,7 +68,7 @@ export const usChess = {
     "The unified rating platform for US Chess's 110,000+ members. Built while working at Leago.",
   role: "I developed forms, tables, and data hooks for the frontend, and fixed a critical bug before a high-stakes demo.",
   linkLeft: false,
-  image: leagoJpg,
+  image: usChessWebp,
   icon: Crown,
   links: [
     {
