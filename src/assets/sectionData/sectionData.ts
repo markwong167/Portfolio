@@ -23,6 +23,7 @@ export const intro = {
 export const greenParty = {
   id: "greenParty",
   title: "Green Party of Ontario",
+  jobTitle: "Software Developer Co-op",
   description:
     "Canopy: a WordPress multisite that puts riding and campaign websites under one system.",
   role: "I wrote Canopy's design docs and built its core theme and reusable sections in PHP and TypeScript.",
@@ -40,6 +41,7 @@ export const greenParty = {
 export const builderLynx = {
   id: "builderLynx",
   title: "Builder Lynx",
+  jobTitle: "React Developer",
   description:
     "Builder Lynx is an all-encompassing platform for construction companies (builders) to manage their business.",
   role: "I built the frontend Digital Sales Office (Purchaser Portal) for builders to advertise, sell, and sign contracts like the Agreement of Purchase and Sale for their projects.",
@@ -57,6 +59,7 @@ export const builderLynx = {
 export const usChess = {
   id: "usChess",
   title: "US Chess Ratings",
+  jobTitle: "Full Stack Developer (Front End Focus)",
   description:
     "The unified rating platform for US Chess's 110,000+ members. Built while working at Leago.",
   role: "I developed forms, tables, and data hooks for the frontend, and fixed a critical bug before a high-stakes demo.",
@@ -74,6 +77,7 @@ export const usChess = {
 export const leago = {
   id: "leago",
   title: "Leago",
+  jobTitle: "Full Stack Developer (Front End Focus)",
   description:
     "A tournament, club, rating, and membership platform for mind games.",
   role: "I refreshed the frontend, cut technical debt, and contributed to the .NET backend.",
@@ -91,6 +95,7 @@ export const leago = {
 export const aiFounded = {
   id: "aiFounded",
   title: "AIFounded",
+  jobTitle: "Full Stack Developer",
   description: "Basketball Terminal: A visual analysis of NBA stats.",
   role: "As the frontend developer for the project, I used React and Plotly to create a responsive and interactive dashboard that displays comprehensive analysis of NBA stats.",
   linkLeft: false,

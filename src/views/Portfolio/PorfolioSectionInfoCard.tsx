@@ -39,12 +39,17 @@ export const PorfolioSectionInfoCard = ({
     >
       <CardHeader>
         <CardTitle className={titleTextSize}>{data.title}</CardTitle>
+        {data.jobTitle && (
+          <p className={`${bodyTextSize} text-muted-foreground`}>
+            {data.jobTitle}
+          </p>
+        )}
       </CardHeader>
       <CardContent className='flex-grow flex flex-col gap-4'>
         <p className={bodyTextSize}>{data.description}</p>
         {data.role && (
           <span className={bodyTextSize}>
-            <strong>Role:</strong> {data.role}
+            <strong>My work:</strong> {data.role}
           </span>
         )}
         {isMobileOrTablet && data?.image && (
