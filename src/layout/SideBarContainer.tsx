@@ -18,7 +18,6 @@ const sectionDataItems = [
   sectionData.leago,
   sectionData.builderLynx,
   sectionData.aiFounded,
-  sectionData.grg,
 ].map((item) => ({
   ...item,
   url: `/#${item.id}`,

@@ -19,7 +19,6 @@ export const PortfolioPage = () => {
       <PortfolioSection data={sectionData.leago} layout='picLeft' />
       <PortfolioSection data={sectionData.builderLynx} layout='picRight' />
       <PortfolioSection data={sectionData.aiFounded} layout='picLeft' />
-      <PortfolioSection data={sectionData.grg} layout='picRight' />
       <CallToAction isMobile={isMobile} />
     </div>
   );
