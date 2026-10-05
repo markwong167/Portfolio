@@ -20,16 +20,16 @@ export const PorfolioSectionInfoCard = ({
   isMobile: string;
 }) => {
   const isMobileOrTablet = ["M", "T"].includes(isMobile);
-  let titleTextSize = "text-5xl";
+  let titleTextSize = "text-3xl";
   let bodyTextSize = "text-xl";
-  let linkTextSize = "text-2xl";
+  let linkTextSize = "text-lg";
   if (isMobile === "M") {
-    titleTextSize = "text-3xl";
+    titleTextSize = "text-2xl";
     bodyTextSize = "text-md";
-    linkTextSize = "text-xl";
+    linkTextSize = "text-base";
   } else if (isMobile === "T") {
     bodyTextSize = "text-2xl";
-    linkTextSize = "text-3xl";
+    linkTextSize = "text-xl";
   }
   return (
     <Card
@@ -46,11 +46,28 @@ export const PorfolioSectionInfoCard = ({
         )}
       </CardHeader>
       <CardContent className='flex-grow flex flex-col gap-4'>
+        {data.badge && (
+          <span className='self-start rounded-full border border-secondary px-3 py-1 text-sm font-semibold text-secondary'>
+            {data.badge}
+          </span>
+        )}
         <p className={bodyTextSize}>{data.description}</p>
         {data.role && (
           <span className={bodyTextSize}>
             <strong>My work:</strong> {data.role}
           </span>
+        )}
+        {data.tags && (
+          <ul className='flex flex-wrap gap-2'>
+            {data.tags.map((tag) => (
+              <li
+                key={tag}
+                className='rounded-md border px-2 py-0.5 text-sm text-muted-foreground'
+              >
+                {tag}
+              </li>
+            ))}
+          </ul>
         )}
         {isMobileOrTablet && data?.image && (
           <div className='flex-grow'>
@@ -58,14 +75,14 @@ export const PorfolioSectionInfoCard = ({
           </div>
         )}
       </CardContent>
-      <CardFooter
-        className={`${data.linkLeft ? "items-start" : "items-end"} ${
-          isMobileOrTablet ? "gap-5" : "gap-2"
-        } flex flex-col justify-end mt-auto`}
-      >
+      <CardFooter className='mt-auto flex flex-row flex-wrap items-center justify-start gap-x-5 gap-y-2'>
         {data.links?.map((link) => {
           if (!link.link) {
-            return <h3 className={linkTextSize}>{link.linkText}</h3>;
+            return (
+              <h3 key={link.id} className={linkTextSize}>
+                {link.linkText}
+              </h3>
+            );
           }
           return (
             <Link
@@ -77,8 +94,8 @@ export const PorfolioSectionInfoCard = ({
             >
               {link.linkText}
               {!link.link.startsWith("/") &&
-                !link.link.startsWith("mailto:") && <ExternalLink size={24} />}
-              {link.link.startsWith("mailto:") && <Mail size={24} />}
+                !link.link.startsWith("mailto:") && <ExternalLink size={18} />}
+              {link.link.startsWith("mailto:") && <Mail size={18} />}
             </Link>
           );
         })}
