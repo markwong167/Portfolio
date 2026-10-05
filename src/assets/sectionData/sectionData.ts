@@ -26,8 +26,8 @@ export const greenParty = {
   jobTitle: "Software Developer Co-op",
   tags: ["WordPress", "PHP", "TypeScript"],
   description:
-    "Canopy: a WordPress multisite that puts riding and campaign websites under one system.",
-  role: "I wrote Canopy's design docs and built its core theme and reusable sections in PHP and TypeScript.",
+    "Ontario's provincial Green Party, working for fairness and a future Ontarians can believe in.",
+  role: "I built Canopy, a WordPress multisite for the party's riding and campaign websites: wrote its design docs and built its core theme in PHP and TypeScript.",
   linkLeft: false,
   image: greenPartyWebp,
   icon: Trees,
