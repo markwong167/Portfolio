@@ -59,7 +59,7 @@ export const usChess = {
   title: "US Chess Ratings",
   description:
     "The unified rating platform for US Chess's 110,000+ members. Built while working at Leago.",
-  role: "I built the forms, tables, and hooks that replaced two legacy systems with one app.",
+  role: "I developed forms, tables, and data hooks for the frontend, and fixed a critical bug before a high-stakes demo.",
   linkLeft: false,
   image: leagoJpg,
   icon: Crown,
