@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { PorfolioSectionInfoCard } from "./PorfolioSectionInfoCard";
 import { PorfolioSectionPictureCard } from "./PorfolioSectionPictureCard";

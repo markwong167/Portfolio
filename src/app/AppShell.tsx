@@ -1,23 +1,28 @@
+"use client";
+
 import React, { useState, useEffect } from "react";
-import { BrowserRouter, Routes, Route } from "react-router-dom";
-import { PortfolioPage } from "./pages/Portfolio/PortfolioPage";
-import { Header } from "./layout/Header";
+import { Header } from "../layout/Header";
 import {
   SIDEBAR_WIDTH,
   SIDEBAR_WIDTH_ICON,
   SidebarProvider,
   SidebarTrigger,
-} from "./components/ui/sidebar";
-import { SideBarContainer } from "./layout/SideBarContainer";
-import "./globals.css";
-import { useIsMobile } from "./hooks/use-mobile";
-import { Footer } from "./layout/Footer";
+} from "../components/ui/sidebar";
+import { SideBarContainer } from "../layout/SideBarContainer";
+import { useIsMobile } from "../hooks/use-mobile";
+import { Footer } from "../layout/Footer";
 
-const App = () => {
+const AppShell = ({ children }: { children: React.ReactNode }) => {
   const [sidebarOpen, setSidebarOpen] = useState(true);
-  const [theme, setTheme] = useState(() =>
-    window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light"
-  );
+  const [theme, setTheme] = useState("light");
+
+  useEffect(() => {
+    setTheme(
+      window.matchMedia("(prefers-color-scheme: dark)").matches
+        ? "dark"
+        : "light"
+    );
+  }, []);
 
   useEffect(() => {
     document.documentElement.classList.toggle("dark", theme === "dark");
@@ -30,7 +35,6 @@ const App = () => {
   return (
     <div className='flex flex-col min-h-screen w-full'>
       <SidebarProvider open={sidebarOpen} onOpenChange={setSidebarOpen}>
-        <BrowserRouter>
           <div className='w-full flex flex-col'>
             <Header currentTheme={theme} toggleTheme={toggleTheme} />
             <div
@@ -56,18 +60,15 @@ const App = () => {
                 }`}
               >
                 <div className='flex py-4 overflow-y-auto justify-center'>
-                  <Routes>
-                    <Route path='/' element={<PortfolioPage />} />
-                  </Routes>
+                  {children}
                 </div>
                 <Footer />
               </div>
             </div>
           </div>
-        </BrowserRouter>
       </SidebarProvider>
     </div>
   );
 };
 
-export default App;
+export default AppShell;
