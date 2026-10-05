@@ -46,11 +46,6 @@ export const PorfolioSectionInfoCard = ({
         )}
       </CardHeader>
       <CardContent className='flex-grow flex flex-col gap-4'>
-        {data.badge && (
-          <span className='self-start rounded-full border border-secondary px-3 py-1 text-sm font-semibold text-secondary'>
-            {data.badge}
-          </span>
-        )}
         <p className={bodyTextSize}>{data.description}</p>
         {data.role && (
           <span className={bodyTextSize}>

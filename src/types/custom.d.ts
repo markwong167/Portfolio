@@ -3,7 +3,6 @@ type SectionDataType = {
   title: string;
   jobTitle?: string;
   tags?: string[];
-  badge?: string;
   description: string;
   role?: string;
   links?: {
