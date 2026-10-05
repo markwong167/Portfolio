@@ -9,6 +9,12 @@
 
 # production
 /build
+/.next
+next-env.d.ts
+*.tsbuildinfo
+/.next
+next-env.d.ts
+*.tsbuildinfo
 /dist
 
 # misc

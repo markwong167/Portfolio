@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import { PortfolioSection } from "./PortfolioSection";
 import * as sectionData from "../../assets/sectionData/sectionData";

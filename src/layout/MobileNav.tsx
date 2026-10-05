@@ -1,9 +1,11 @@
+"use client";
+
 import React, { useState } from "react";
 import { Sheet, SheetContent, SheetTrigger } from "../components/ui/sheet";
 import { Button } from "../components/ui/button";
 import { Menu as MenuIcon } from "lucide-react";
 import { NavItem } from "./Header";
-import { useNavigate } from "react-router-dom";
+import { useRouter } from "next/navigation";
 import { Sun, Moon } from "lucide-react";
 export default function MobileNav({
   navItems,
@@ -15,7 +17,7 @@ export default function MobileNav({
   toggleTheme: () => void;
 }) {
   const [open, setOpen] = useState(false);
-  const navigate = useNavigate();
+  const router = useRouter();
   return (
     <Sheet open={open} onOpenChange={setOpen}>
       <SheetTrigger asChild>
@@ -49,7 +51,7 @@ export default function MobileNav({
                 if (item.isExternalLink) {
                   window.open(item.link, "_blank");
                 } else {
-                  navigate(item.link);
+                  router.push(item.link);
                 }
               }}
               className='justify-start ml-4 gap-10'

@@ -1,5 +1,7 @@
+"use client";
+
 import React from "react";
-import { Link } from "react-router-dom";
+import Link from "next/link";
 import { Card } from "../../components/ui/card";
 import { MailIcon } from "lucide-react";
 import LinkedinIcon from "../../components/LinkedinIcon";
@@ -29,7 +31,7 @@ export const CallToAction = ({ isMobile }: { isMobile: string }) => {
           }`}
         >
           <Link
-            to='https://www.linkedin.com/in/markwong167/'
+            href='https://www.linkedin.com/in/markwong167/'
             target='_blank'
             rel='noreferrer noopener'
             className={`${linkTextSize} flex flex-row gap-2 items-center hover:underline text-secondary hover:text-secondary-foreground`}
@@ -37,7 +39,7 @@ export const CallToAction = ({ isMobile }: { isMobile: string }) => {
             <LinkedinIcon size={24} /> Connect With Me
           </Link>
           <Link
-            to='mailto:markwong167@gmail.com'
+            href='mailto:markwong167@gmail.com'
             target='_blank'
             rel='noreferrer noopener'
             className={`${linkTextSize} flex flex-row gap-2 items-center hover:underline text-secondary hover:text-secondary-foreground`}
