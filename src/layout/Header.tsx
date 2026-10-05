@@ -4,12 +4,12 @@ import {
   ExternalLinkIcon,
   FileIcon,
   HomeIcon,
-  LinkedinIcon,
   Moon,
   Sun,
 } from "lucide-react";
 import { useIsMobile } from "../hooks/use-mobile";
 import MobileNav from "./MobileNav";
+import LinkedinIcon from "../components/LinkedinIcon";
 import { ReactComponent as GithubIcon } from "@/assets/images/github.svg";
 
 export type NavItem = {
