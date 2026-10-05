@@ -1,14 +1,14 @@
 import mark from "@/assets/images/Mark_Wong.webp";
 import leagoJpg from "@/assets/images/leago.webp";
 import aiFoundedJpg from "@/assets/images/aiFounded.webp";
-import grgWebp from "@/assets/images/grg.webp";
+import greenPartyWebp from "@/assets/images/greenParty.webp";
 import builderLynxPng from "@/assets/images/builderLynx.webp";
-import { Home, Building2, Swords, Trees, ChartBar } from "lucide-react";
+import { Home, Building2, Swords, Crown, Trees, ChartBar } from "lucide-react";
 export const intro = {
   id: "intro",
   title: "Hi, I'm Mark!",
   description:
-    "I'm a Software Developer with 5 years of experience creating web apps. I specialize in delivering great user experiences through scalable, performant solutions.",
+    "I'm a Software Developer with 4 years of experience creating web apps. I specialize in delivering great user experiences through scalable, performant solutions.",
   links: [
     {
       id: 1,
@@ -20,9 +20,30 @@ export const intro = {
   image: mark,
   icon: Home,
 };
+export const greenParty = {
+  id: "greenParty",
+  title: "Green Party of Ontario",
+  jobTitle: "Software Developer Co-op",
+  tags: ["WordPress", "PHP", "TypeScript"],
+  description:
+    "Ontario's provincial Green Party, working for fairness and a future Ontarians can believe in.",
+  role: "Worked with the team on Canopy, the party's WordPress multisite for riding and campaign sites, writing its design docs and core theme in PHP and TypeScript.",
+  linkLeft: false,
+  image: greenPartyWebp,
+  icon: Trees,
+  links: [
+    {
+      id: 1,
+      linkText: "gpo.ca",
+      link: "https://gpo.ca",
+    },
+  ],
+};
 export const builderLynx = {
   id: "builderLynx",
   title: "Builder Lynx",
+  jobTitle: "React Developer",
+  tags: ["React", "Redux Toolkit", "TypeScript", "Node.js"],
   description:
     "Builder Lynx is an all-encompassing platform for construction companies (builders) to manage their business.",
   role: "I built the frontend Digital Sales Office (Purchaser Portal) for builders to advertise, sell, and sign contracts like the Agreement of Purchase and Sale for their projects.",
@@ -37,19 +58,40 @@ export const builderLynx = {
     },
   ],
 };
+export const usChess = {
+  id: "usChess",
+  title: "US Chess Ratings",
+  jobTitle: "Full Stack Developer (Front End Focus)",
+  tags: ["React", "TanStack Query", "TypeScript"],
+  description:
+    "The unified rating platform for US Chess's 110,000+ members. Built while working at Leago.",
+  role: "I developed forms, tables, and data hooks for the frontend, and fixed a critical bug before a high-stakes demo.",
+  linkLeft: false,
+  image: leagoJpg,
+  icon: Crown,
+  links: [
+    {
+      id: 1,
+      linkText: "ratings.uschess.org",
+      link: "https://ratings.uschess.org",
+    },
+  ],
+};
 export const leago = {
   id: "leago",
   title: "Leago",
+  jobTitle: "Full Stack Developer (Front End Focus)",
+  tags: ["React", "ShadCN", ".NET (C#)"],
   description:
-    "Leago is a tournament, club, rating, and membership management platform for mind games and their respective clubs and associations.",
-  role: "Revamped the frontend, tackling our technical debt to leave things cleaner and easier to work with and contributed to the backend to improve the overall performance of the platform.",
+    "A tournament, club, rating, and membership platform for mind games.",
+  role: "I refreshed the frontend, cut technical debt, and contributed to the .NET backend.",
   linkLeft: false,
   image: leagoJpg,
   icon: Swords,
   links: [
     {
       id: 1,
-      linkText: "Website",
+      linkText: "leago.gg",
       link: "https://leago.gg",
     },
   ],
@@ -57,6 +99,8 @@ export const leago = {
 export const aiFounded = {
   id: "aiFounded",
   title: "AIFounded",
+  jobTitle: "Full Stack Developer",
+  tags: ["React", "Plotly", "Firebase"],
   description: "Basketball Terminal: A visual analysis of NBA stats.",
   role: "As the frontend developer for the project, I used React and Plotly to create a responsive and interactive dashboard that displays comprehensive analysis of NBA stats.",
   linkLeft: false,
@@ -69,26 +113,4 @@ export const aiFounded = {
       link: "mailto:markwong167@gmail.com",
     },
   ],
-};
-export const grg = {
-  id: "grg",
-  title: "Grassroots Greens",
-  description:
-    "The go-to platform for eco-conscious individuals to connect, organize events, and drive positive environmental change.",
-  role: "As the lead developer for the rebuild, I was responsible for building the frontend, backend, and devops of the new platform.",
-  links: [
-    {
-      id: 1,
-      linkText: "Original Website",
-      link: "https://www.grassrootsgreens.ca",
-    },
-    {
-      id: 2,
-      linkText: "New Test Webpage",
-      link: "https://grgreens.xyz",
-    },
-  ],
-  linkLeft: false,
-  image: grgWebp,
-  icon: Trees,
 };

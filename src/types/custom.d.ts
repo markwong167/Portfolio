@@ -1,6 +1,8 @@
 type SectionDataType = {
   id: string;
   title: string;
+  jobTitle?: string;
+  tags?: string[];
   description: string;
   role?: string;
   links?: {

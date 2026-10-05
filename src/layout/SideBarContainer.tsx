@@ -15,10 +15,11 @@ import * as sectionData from "../assets/sectionData/sectionData";
 import { Link, scroller } from "react-scroll";
 const sectionDataItems = [
   sectionData.intro,
+  sectionData.greenParty,
+  sectionData.usChess,
   sectionData.leago,
   sectionData.builderLynx,
   sectionData.aiFounded,
-  sectionData.grg,
 ].map((item) => ({
   ...item,
   url: `/#${item.id}`,
