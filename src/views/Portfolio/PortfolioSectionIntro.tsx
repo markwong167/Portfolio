@@ -76,7 +76,7 @@ export const PortfolioSectionIntro = ({
         </CardFooter>
       </div>
       <div className='flex-grow py-4 px-8'>
-        <PorfolioSectionPictureCard data={data} />
+        <PorfolioSectionPictureCard data={data} imageClassName='max-h-[30rem]' />
       </div>
     </section>
   );
