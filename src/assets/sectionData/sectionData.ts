@@ -9,7 +9,7 @@ export const intro = {
   id: "intro",
   title: "Hi, I'm Mark!",
   description:
-    "I build fast, reliable web apps with React and TypeScript. I've led a UI migration that cut 300KB from a production bundle and written data hooks my team adopted as the standard.",
+    "I build fast, reliable web apps with React and TypeScript.\nI've led a UI migration that cut 300KB from a production bundle and written data hooks my team adopted as the standard.",
   links: [
     {
       id: 1,

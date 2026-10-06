@@ -41,7 +41,9 @@ export const PortfolioSectionIntro = ({
           <CardTitle className={titleTextSize}>{data.title}</CardTitle>
         </CardHeader>
         <CardContent className='flex-grow flex gap-4'>
-          <p className={bodyTextSize}>{data.description}</p>
+          <p className={`whitespace-pre-line ${bodyTextSize}`}>
+            {data.description}
+          </p>
           {data.role && (
             <span className={bodyTextSize}>
               <strong>Role:</strong> {data.role}
