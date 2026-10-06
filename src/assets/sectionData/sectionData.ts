@@ -28,7 +28,7 @@ export const greenParty = {
   tags: ["WordPress", "PHP", "TypeScript"],
   description:
     "Ontario's provincial Green Party, working for fairness and a future Ontarians can believe in.",
-  role: "Worked with the team on Canopy, the party's WordPress multisite for riding and campaign sites, writing its design docs and core theme in PHP and TypeScript.",
+  role: "Worked with the team on Canopy, the party's new WordPress platform and the foundation of the next gpo.ca, powering the main site alongside riding and campaign sites, writing its design docs and core theme in PHP and TypeScript.",
   linkLeft: false,
   image: greenPartyWebp,
   icon: Trees,
@@ -66,7 +66,7 @@ export const usChess = {
   tags: ["React", "TanStack Query", "TypeScript"],
   description:
     "The unified rating platform for US Chess's 110,000+ members. Built while working at Leago.",
-  role: "I developed forms, tables, and data hooks for the frontend, and fixed a critical bug before a high-stakes demo.",
+  role: "Using React and TanStack Query, I built the forms, tables, and data hooks for the app. My create and update hooks became the team's standard pattern. When a critical bug came up right before a high-stakes demo, I found and fixed it in time.",
   linkLeft: false,
   image: usChessWebp,
   icon: Crown,
@@ -85,7 +85,7 @@ export const leago = {
   tags: ["React", "ShadCN", ".NET (C#)"],
   description:
     "A tournament, club, rating, and membership platform for mind games.",
-  role: "I refreshed the frontend, cut technical debt, and contributed to the .NET backend.",
+  role: "I led the migration of the platform's forms from Material-UI to ShadCN and custom components. That cut 300KB from the bundle and made rendering 10-20% faster. I also worked in the C# .NET backend, reducing technical debt on both sides of the stack.",
   linkLeft: false,
   image: leagoJpg,
   icon: Swords,
