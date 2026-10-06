@@ -16,6 +16,11 @@ export const intro = {
       linkText: "LinkedIn",
       link: "https://www.linkedin.com/in/markwong167/",
     },
+    {
+      id: 2,
+      linkText: "Email Me",
+      link: "mailto:markwong167@gmail.com",
+    },
   ],
   linkLeft: true,
   image: mark,
