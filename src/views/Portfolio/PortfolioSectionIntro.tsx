@@ -10,7 +10,7 @@ import {
 import React from "react";
 import { PorfolioSectionPictureCard } from "./PorfolioSectionPictureCard";
 import Link from "next/link";
-import { ExternalLink } from "lucide-react";
+import { ExternalLink, MailIcon } from "lucide-react";
 export const PortfolioSectionIntro = ({
   data,
   isMobile,
@@ -41,7 +41,9 @@ export const PortfolioSectionIntro = ({
           <CardTitle className={titleTextSize}>{data.title}</CardTitle>
         </CardHeader>
         <CardContent className='flex-grow flex gap-4'>
-          <p className={bodyTextSize}>{data.description}</p>
+          <p className={`whitespace-pre-line ${bodyTextSize}`}>
+            {data.description}
+          </p>
           {data.role && (
             <span className={bodyTextSize}>
               <strong>Role:</strong> {data.role}
@@ -66,10 +68,11 @@ export const PortfolioSectionIntro = ({
                 rel='noreferrer noopener'
               >
                 {link.linkText}
-                {!link.link.startsWith("/") &&
-                  !link.link.startsWith("mailto:") && (
-                    <ExternalLink size={24} />
-                  )}
+                {link.link.startsWith("mailto:") ? (
+                  <MailIcon size={24} />
+                ) : (
+                  !link.link.startsWith("/") && <ExternalLink size={24} />
+                )}
               </Link>
             );
           })}

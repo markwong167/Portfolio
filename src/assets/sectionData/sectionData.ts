@@ -9,12 +9,17 @@ export const intro = {
   id: "intro",
   title: "Hi, I'm Mark!",
   description:
-    "I'm a Software Developer with 4 years of experience creating web apps. I specialize in delivering great user experiences through scalable, performant solutions.",
+    "I build fast, reliable web apps with React and TypeScript.\nI've led a UI migration that cut 300KB from a production bundle and written data hooks my team adopted as the standard.",
   links: [
     {
       id: 1,
       linkText: "LinkedIn",
       link: "https://www.linkedin.com/in/markwong167/",
+    },
+    {
+      id: 2,
+      linkText: "Email Me",
+      link: "mailto:markwong167@gmail.com",
     },
   ],
   linkLeft: true,
