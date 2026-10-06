@@ -11,6 +11,6 @@ type SectionDataType = {
     link?: string;
   }[];
   linkLeft: boolean;
-  browserUrl?: string;
+  browserFrame?: boolean;
   image?: import("next/image").StaticImageData;
 };
