@@ -31,6 +31,7 @@ export const greenParty = {
   role: "Worked with the team on Canopy, the party's new WordPress platform and the foundation of the next gpo.ca, powering the main site alongside riding and campaign sites, writing its design docs and core theme in PHP and TypeScript.",
   linkLeft: false,
   image: greenPartyWebp,
+  browserUrl: "gpo.ca",
   icon: Trees,
   links: [
     {
@@ -50,6 +51,7 @@ export const builderLynx = {
   role: "I built the frontend Digital Sales Office (Purchaser Portal) for builders to advertise, sell, and sign contracts like the Agreement of Purchase and Sale for their projects.",
   linkLeft: false,
   image: builderLynxPng,
+  browserUrl: "builderlynx.com",
   icon: Building2,
   links: [
     {
@@ -69,6 +71,7 @@ export const usChess = {
   role: "Using React and TanStack Query, I built the forms, tables, and data hooks for the app. My create and update hooks became the team's standard pattern. When a critical bug came up right before a high-stakes demo, I found and fixed it in time.",
   linkLeft: false,
   image: usChessWebp,
+  browserUrl: "ratings.uschess.org",
   icon: Crown,
   links: [
     {
@@ -88,6 +91,7 @@ export const leago = {
   role: "I led the migration of the platform's forms from Material-UI to ShadCN and custom components. That cut 300KB from the bundle and made rendering 10-20% faster. I also worked in the C# .NET backend, reducing technical debt on both sides of the stack.",
   linkLeft: false,
   image: leagoJpg,
+  browserUrl: "leago.gg",
   icon: Swords,
   links: [
     {
