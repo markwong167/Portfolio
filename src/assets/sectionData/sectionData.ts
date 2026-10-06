@@ -66,7 +66,7 @@ export const usChess = {
   tags: ["React", "TanStack Query", "TypeScript"],
   description:
     "The unified rating platform for US Chess's 110,000+ members. Built while working at Leago.",
-  role: "Worked with the team on the frontend and fixed a critical bug just before a major product demo.",
+  role: "Worked with the team across the stack and fixed a critical bug just before a major product demo.",
   linkLeft: false,
   image: usChessWebp,
   icon: Crown,
