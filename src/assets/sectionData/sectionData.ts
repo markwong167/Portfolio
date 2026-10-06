@@ -59,8 +59,8 @@ export const builderLynx = {
   links: [
     {
       id: 58,
-      linkText: "Ask Me About Builder Lynx",
-      link: "mailto:markwong167@gmail.com",
+      linkText: "builderlynx.com",
+      link: "https://builderlynx.com/",
     },
   ],
 };
