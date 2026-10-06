@@ -2,16 +2,11 @@
 
 import React from "react";
 import Link from "next/link";
-import {
-  ExternalLinkIcon,
-  HomeIcon,
-  Moon,
-  Sun,
-} from "lucide-react";
+import { HomeIcon, Moon, Sun } from "lucide-react";
 import { useIsMobile } from "../hooks/use-mobile";
 import MobileNav from "./MobileNav";
 import LinkedinIcon from "../components/LinkedinIcon";
-import GithubIcon from "@/assets/images/github.svg";
+import GithubIcon from "../components/GithubIcon";
 
 export type NavItem = {
   id: string;
@@ -40,12 +35,12 @@ const navItems: NavItem[] = [
     icon: <LinkedinIcon />,
   },
   {
-    id: "portfolio",
-    name: "Portfolio Code",
-    mobileName: "Portfolio Code",
-    link: "https://github.com/markwong167/Portfolio",
+    id: "github",
+    name: "Github",
+    mobileName: "Github",
+    link: "https://github.com/markwong167",
     isExternalLink: true,
-    icon: <GithubIcon style={{ fill: "white" }} />,
+    icon: <GithubIcon />,
   },
 ];
 
@@ -96,7 +91,7 @@ export const Header = ({
                 rel='noreferrer noopener'
               >
                 <h2 className={`font-bold flex items-center gap-2 text-xl`}>
-                  {item.name} <ExternalLinkIcon />
+                  {item.name} {item.icon}
                 </h2>
               </a>
             );

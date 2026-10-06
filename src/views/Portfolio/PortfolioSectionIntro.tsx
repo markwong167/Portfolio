@@ -11,6 +11,8 @@ import React from "react";
 import { PorfolioSectionPictureCard } from "./PorfolioSectionPictureCard";
 import Link from "next/link";
 import { ExternalLink } from "lucide-react";
+import LinkedinIcon from "../../components/LinkedinIcon";
+import GithubIcon from "../../components/GithubIcon";
 export const PortfolioSectionIntro = ({
   data,
   isMobile,
@@ -66,10 +68,14 @@ export const PortfolioSectionIntro = ({
                 rel='noreferrer noopener'
               >
                 {link.linkText}
-                {!link.link.startsWith("/") &&
-                  !link.link.startsWith("mailto:") && (
-                    <ExternalLink size={24} />
-                  )}
+                {link.link.includes("linkedin.com") ? (
+                  <LinkedinIcon size={24} />
+                ) : link.link.includes("github.com") ? (
+                  <GithubIcon size={24} />
+                ) : (
+                  !link.link.startsWith("/") &&
+                  !link.link.startsWith("mailto:") && <ExternalLink size={24} />
+                )}
               </Link>
             );
           })}
