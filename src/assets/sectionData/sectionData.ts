@@ -28,7 +28,7 @@ export const greenParty = {
   tags: ["WordPress", "PHP", "TypeScript"],
   description:
     "Ontario's provincial Green Party, working for fairness and a future Ontarians can believe in.",
-  role: "Worked with the team on Canopy, the party's WordPress multisite for riding and campaign sites, writing its design docs and core theme in PHP and TypeScript.",
+  role: "I helped build Canopy, the party's new WordPress platform and the foundation of the next gpo.ca, powering the main site alongside riding and campaign sites. I wrote its design docs and core theme in PHP and TypeScript.",
   linkLeft: false,
   image: greenPartyWebp,
   icon: Trees,
