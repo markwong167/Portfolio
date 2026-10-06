@@ -12,7 +12,7 @@ export const PorfolioSectionPictureCard = ({
       <img
         src={data.image?.src}
         alt={data.title}
-        className='w-full h-full object-cover max-h-[30rem]'
+        className='w-full h-full object-cover'
       />
     </Card>
   );
